@@ -128,6 +128,22 @@
   .faq-a{max-height:0;overflow:hidden;transition:max-height .45s cubic-bezier(.16,1,.3,1)}
   .faq-a p{padding:0 0 22px;color:var(--ink-soft);font-size:15px;max-width:64ch}
 
+  /* FEATURE DEEP DIVES */
+  .feature{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center;padding:64px 0;border-bottom:1px solid var(--line)}
+  .feature:last-of-type{border-bottom:none}
+  .feature.flip .f-media{order:2}
+  .f-media{border-radius:18px;height:340px}
+  .f-media.m1{background:radial-gradient(120% 120% at 24% 18%,rgba(200,204,239,.45),transparent 60%),linear-gradient(135deg,#211c63,#4a3f9e)}
+  .f-media.m2{background:radial-gradient(120% 120% at 76% 20%,rgba(239,87,29,.4),transparent 60%),linear-gradient(135deg,#241809,#8a6a44)}
+  .f-media.m3{background:radial-gradient(120% 120% at 24% 18%,rgba(246,160,113,.45),transparent 60%),linear-gradient(135deg,#5a2413,#c05a25)}
+  .f-media.m4{background:radial-gradient(120% 120% at 76% 20%,rgba(231,213,190,.5),transparent 60%),linear-gradient(135deg,#2a2410,#7b6a2f)}
+  .feature h2{font-size:clamp(24px,3vw,36px);font-weight:500;margin:14px 0 16px}
+  .feature .lead{font-size:16px;color:var(--ink);margin-bottom:12px}
+  .feature p{font-size:15px;color:var(--ink-soft);margin-bottom:10px;max-width:56ch}
+  .fcheck{display:flex;gap:12px;padding:10px 0;font-size:15px;border-top:1px solid var(--line)}
+  .fcheck:first-of-type{margin-top:16px}
+  .fcheck::before{content:"✓";color:var(--orange);font-weight:700}
+
   /* CTA + FOOTER */
   .foot-cta{margin-top:78px;position:relative;color:var(--paper);border-radius:22px 22px 0 0;overflow:hidden;background:radial-gradient(120% 120% at 80% 10%,rgba(239,87,29,.22),transparent 55%),linear-gradient(135deg,#1c1852,#2e2780)}
   .foot-cta-inner{padding:70px 56px 0}
@@ -147,7 +163,8 @@
     .mobile-bar{display:flex}
     body{padding-bottom:78px}
     .inc-grid{grid-template-columns:1fr 1fr}
-    .process,.deliv,.who-grid{grid-template-columns:1fr}
+    .process,.deliv,.who-grid,.feature{grid-template-columns:1fr}
+    .feature.flip .f-media{order:0}
     .foot-nav{grid-template-columns:1fr 1fr}
     .foot-nav > div:first-child{grid-column:1/-1}
     .foot-cta-inner,.foot-nav,.foot-bottom{padding-left:28px;padding-right:28px}
@@ -258,6 +275,65 @@
   </div>
 </section>
 
+<!-- DEEP DIVES -->
+<section class="section" style="padding-bottom:0">
+  <div class="wrap">
+
+    <div class="feature" id="targeting">
+      <div class="f-media m1"></div>
+      <div>
+        <span class="eyebrow">Targeting</span>
+        <h2>The right 300 prospects beat the wrong 3,000</h2>
+        <p class="lead">Most outreach fails before a single word is written — because it's aimed at nobody in particular.</p>
+        <p>We start by mapping your actual market: the business owners, independents and professionals in your zone who match the clients you already serve best — and who are most likely to be outgrowing their current accountant. Every contact is verified before launch, so your campaigns never bounce and never guess.</p>
+        <div class="fcheck">A list built for your firm, your zone, your ideal mandate</div>
+        <div class="fcheck">Every address verified — zero bounces, zero wasted sends</div>
+        <div class="fcheck">One firm per zone: your prospects are never shared with a competitor</div>
+      </div>
+    </div>
+
+    <div class="feature flip" id="deliverability">
+      <div class="f-media m2"></div>
+      <div>
+        <span class="eyebrow">Deliverability</span>
+        <h2>The best email in the world is worthless in a spam folder</h2>
+        <p class="lead">Before anything is sent, we build the technical foundation most agencies skip.</p>
+        <p>Your campaigns run on dedicated sending domains — warmed up for weeks, fully authenticated (SPF, DKIM, DMARC), and completely separate from your firm's real domain. Your professional address stays pristine, your reputation stays intact, and your messages land where decisions are made: the primary inbox.</p>
+        <div class="fcheck">Dedicated domains — your firm's email address is never exposed</div>
+        <div class="fcheck">94% inbox placement, monitored continuously</div>
+        <div class="fcheck">Volume kept deliberately low: quality sending, never blasting</div>
+      </div>
+    </div>
+
+    <div class="feature" id="copywriting">
+      <div class="f-media m3"></div>
+      <div>
+        <span class="eyebrow">Copywriting</span>
+        <h2>Sober enough for your Order. Sharp enough to get replies.</h2>
+        <p class="lead">Writing to a business owner about their accounting is a delicate exercise — hype kills trust, and jargon kills interest.</p>
+        <p>Every sequence is 3–4 short, human messages written in your firm's voice: exact, discreet and non-comparative, as your code of conduct requires — but built around the one thing your prospect actually cares about, their business. No templates recycled across clients. And nothing is ever sent until you've approved every word.</p>
+        <div class="fcheck">Compliant by design: sober, exact, non-comparative</div>
+        <div class="fcheck">Written in your voice, about their business — not about you</div>
+        <div class="fcheck">You approve every sequence before a single send</div>
+      </div>
+    </div>
+
+    <div class="feature flip" id="reporting">
+      <div class="f-media m4"></div>
+      <div>
+        <span class="eyebrow">Reporting</span>
+        <h2>You'll always know exactly what your investment is doing</h2>
+        <p class="lead">No black box, no vanity metrics — just the three numbers that matter.</p>
+        <p>Every month you receive a clear report: how many emails were sent, how many replies came back, and how many qualified meetings landed in your calendar. We read the results with you, adjust the targeting and the message, and double down on what works. If something underperforms, you hear it from us first.</p>
+        <div class="fcheck">Monthly report: sends, replies, meetings — nothing padded</div>
+        <div class="fcheck">Continuous adjustment based on real responses</div>
+        <div class="fcheck">Direct access to the person running your campaigns</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- WHO IT'S FOR -->
 <section class="section">
   <div class="wrap">
@@ -315,7 +391,7 @@
       </div>
       <p style="color:#a7a2d6;font-size:13.5px;margin-top:14px;max-width:32ch">Done-for-you cold email for accounting firms. Paris &amp; Île-de-France.</p>
     </div>
-    <div class="foot-col"><h4>Services</h4><a href="index.html#services">Targeting</a><a href="index.html#services">Deliverability</a><a href="index.html#services">Copywriting</a><a href="index.html#services">Reporting</a></div>
+    <div class="foot-col"><h4>Services</h4><a href="how-we-work.html#targeting">Targeting</a><a href="how-we-work.html#deliverability">Deliverability</a><a href="how-we-work.html#copywriting">Copywriting</a><a href="how-we-work.html#reporting">Reporting</a></div>
     <div class="foot-col"><h4>Company</h4><a href="index.html#work">Case studies</a><a href="how-we-work.html">How we work</a><a href="index.html#pricing">Pricing</a><a href="index.html#contact">Contact</a></div>
     <div class="foot-col"><h4>Get in touch</h4><a href="mailto:hello@mlkleadhunter.com">hello@mlkleadhunter.com</a><a href="index.html#contact">Book a call</a><a href="mentions-legales.html">Legal notice</a></div>
   </div>
