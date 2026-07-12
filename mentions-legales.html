@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Legal notice — mlkLeadHunters</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --font-display:'Questrial', system-ui, sans-serif;
+    --font-body:'Questrial', system-ui, sans-serif;
+    --paper:#F3E9DB;--paper-2:#F8F2E9;--sand:#E7D5BE;--ink:#231A12;--ink-soft:#6E6053;
+    --line:#DBC9B1;--orange:#EF571D;--purple:#211C63;--peri:#C8CCEF;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{overflow-x:hidden;font-family:var(--font-body);color:var(--ink);background:var(--paper);line-height:1.65;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:var(--font-display);font-weight:600;letter-spacing:-.01em;line-height:1.1}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+  .eyebrow{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--orange);display:inline-flex;align-items:center;gap:8px}
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--orange)}
+  .btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:15px;padding:14px 24px;border-radius:10px;border:1.5px solid transparent;cursor:pointer;transition:.18s}
+  .btn-primary{background:var(--orange);color:#fff}
+  .btn-primary:hover{background:#d8460f;transform:translateY(-1px)}
+  .btn-dark{background:var(--ink);color:var(--paper)}
+
+  /* NAV */
+  .nav{position:sticky;top:16px;z-index:50;margin:16px auto -74px;max-width:1120px;padding:0 16px}
+  .nav-inner{background:var(--ink);color:var(--paper);border-radius:14px;display:flex;align-items:center;justify-content:space-between;padding:12px 14px 12px 20px;box-shadow:0 10px 30px rgba(35,26,18,.28)}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px}
+  .brand .mark{width:20px;height:20px;flex:none}
+  .brand b{font-weight:800}
+  .nav-links{display:flex;gap:26px;font-size:14px;font-weight:500}
+  .nav-links a{opacity:.85;transition:.15s}
+  .nav-links a:hover{opacity:1;color:var(--orange)}
+  .nav-cta{padding:10px 18px;font-size:14px}
+  .menu-btn{display:none;flex-direction:column;justify-content:center;gap:4px;width:42px;height:38px;border:none;background:transparent;cursor:pointer;padding:0}
+  .menu-btn span{display:block;height:2px;width:22px;background:var(--paper);border-radius:2px;transition:.2s;margin:0 auto}
+  .menu-btn.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+  .menu-btn.open span:nth-child(2){opacity:0}
+  .menu-btn.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+  .mobile-menu{position:absolute;top:calc(100% + 10px);left:16px;right:16px;z-index:55;background:var(--ink);color:var(--paper);border-radius:14px;box-shadow:0 18px 40px rgba(35,26,18,.34);overflow:hidden;max-height:0;opacity:0;transform:translateY(-10px);pointer-events:none;transition:max-height .75s cubic-bezier(.16,1,.3,1),opacity .55s ease,transform .75s cubic-bezier(.16,1,.3,1)}
+  .mobile-menu.open{max-height:80vh;opacity:1;transform:translateY(0);pointer-events:auto}
+  .mm-inner{padding:12px}
+  .mobile-menu a{display:block;padding:12px 14px;font-size:15px;font-weight:500;border-radius:8px;opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s cubic-bezier(.16,1,.3,1)}
+  .mobile-menu.open a{opacity:1;transform:none}
+  .mobile-menu.open a:nth-child(1){transition-delay:.14s}
+  .mobile-menu.open a:nth-child(2){transition-delay:.22s}
+  .mobile-menu.open a:nth-child(3){transition-delay:.30s}
+  .mobile-menu.open a:nth-child(4){transition-delay:.38s}
+  .mobile-menu.open a:nth-child(5){transition-delay:.46s}
+  .mobile-menu.open a:nth-child(6){transition-delay:.54s}
+  .mobile-menu a:hover{background:rgba(255,255,255,.06);color:var(--orange)}
+  .mobile-bar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 12px;gap:10px;background:linear-gradient(to top,rgba(243,233,219,.98),rgba(243,233,219,.86));backdrop-filter:blur(6px);border-top:1px solid var(--line)}
+  .mobile-bar .btn{flex:1;justify-content:center;padding:14px}
+
+  /* HERO (compact cinematic) */
+  .page-hero{position:relative;min-height:46vh;display:flex;align-items:flex-end;color:#fff;overflow:hidden;
+    background:
+      linear-gradient(90deg, rgba(18,12,7,.9) 0%, rgba(18,12,7,.55) 42%, rgba(18,12,7,.12) 100%),
+      repeating-linear-gradient(90deg, rgba(255,255,255,.055) 0 2px, rgba(0,0,0,.10) 2px 10px),
+      radial-gradient(120% 90% at 78% 25%, rgba(239,87,29,.34), transparent 55%),
+      linear-gradient(120deg,#241809 0%, #6d4a29 58%, #b98a56 100%);
+    clip-path:polygon(0 0,100% 0,100% calc(100% - 52px),calc(100% - 52px) 100%,0 100%)}
+  .page-hero .wrap{padding-top:150px;padding-bottom:80px;position:relative;z-index:2}
+  .page-hero h1{font-size:clamp(34px,5vw,58px);font-weight:500;margin-top:16px}
+  .page-hero .eyebrow{color:#f6a071}
+  .page-hero .eyebrow::before{background:var(--orange)}
+  .page-hero .updated{color:#d9cbb8;font-size:14px;margin-top:14px}
+
+  /* LEGAL BODY */
+  .legal{padding:70px 0 40px}
+  .legal-grid{display:grid;grid-template-columns:250px 1fr;gap:56px;align-items:start}
+  .toc{position:sticky;top:110px;border-left:2px solid var(--line);padding-left:18px}
+  .toc a{display:block;font-size:14px;color:var(--ink-soft);padding:6px 0;transition:.15s}
+  .toc a:hover{color:var(--orange)}
+  .legal-content{max-width:70ch;min-width:0}
+  .legal-content section{padding:26px 0;border-bottom:1px solid var(--line)}
+  .legal-content section:last-child{border-bottom:none}
+  .legal-content h2{font-size:24px;margin-bottom:14px}
+  .legal-content h3{font-size:17px;margin:18px 0 6px}
+  .legal-content p{font-size:15px;color:var(--ink-soft);margin-bottom:10px}
+  .legal-content ul{margin:6px 0 12px 20px}
+  .legal-content li{font-size:15px;color:var(--ink-soft);padding:2px 0}
+  .legal-content a{color:var(--orange)}
+  .placeholder{background:#f6e0cf;border:1px dashed var(--orange);border-radius:4px;padding:0 6px;color:#a2431a;font-size:14px;overflow-wrap:anywhere}
+
+  /* FOOTER */
+  .foot-cta{margin-top:60px;position:relative;color:var(--paper);border-radius:22px 22px 0 0;overflow:hidden;background:radial-gradient(120% 120% at 80% 10%,rgba(239,87,29,.22),transparent 55%),linear-gradient(135deg,#1c1852,#2e2780)}
+  .foot-nav{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:30px;padding:56px 56px 28px}
+  .foot-nav .brand{font-size:19px}
+  .foot-col h4{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#a7a2d6;margin-bottom:14px;font-weight:600}
+  .foot-col a{display:block;color:#e6e3f6;font-size:14px;padding:5px 0;opacity:.85}
+  .foot-col a:hover{opacity:1;color:var(--orange)}
+  .foot-bottom{padding:20px 56px;border-top:1px solid rgba(255,255,255,.14);display:flex;justify-content:space-between;font-size:12.5px;color:#a7a2d6;flex-wrap:wrap;gap:8px}
+
+  @media (max-width:900px){
+    .nav-links{display:none}
+    .menu-btn{display:flex}
+    .nav-cta{display:none}
+    .mobile-bar{display:flex}
+    body{padding-bottom:78px}
+    .legal-grid{grid-template-columns:1fr}
+    .toc{position:static;display:flex;flex-wrap:wrap;gap:4px 18px;border-left:none;border-bottom:1px solid var(--line);padding:0 0 18px}
+    .foot-nav{grid-template-columns:1fr 1fr}
+    .foot-nav > div:first-child{grid-column:1/-1}
+    .foot-nav,.foot-bottom{padding-left:28px;padding-right:28px}
+  }
+  @media (max-width:560px){.wrap{padding:0 20px}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">
+      <svg class="mark" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#EF571D" stroke-width="2"/><path d="M12 2v6M12 16v6M2 12h6M16 12h6" stroke="#EF571D" stroke-width="2"/><circle cx="12" cy="12" r="2.4" fill="#EF571D"/></svg>
+      <span><b>mlk</b>LeadHunters</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html#services">Services</a>
+      <a href="index.html#work">Case studies</a>
+      <a href="how-we-work.html">How we work</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+    <a href="index.html#contact" class="btn btn-primary nav-cta">Book a discovery call</a>
+    <button class="menu-btn" aria-label="Open menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mm-inner">
+      <a href="index.html#services" onclick="closeMenu()">Services</a>
+      <a href="index.html#work" onclick="closeMenu()">Case studies</a>
+      <a href="how-we-work.html" onclick="closeMenu()">How we work</a>
+      <a href="index.html#pricing" onclick="closeMenu()">Pricing</a>
+      <a href="index.html#contact" onclick="closeMenu()">Contact</a>
+      <a href="index.html#contact" class="btn btn-primary" onclick="closeMenu()" style="justify-content:center;margin-top:8px">Book a discovery call</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">Legal information</span>
+    <h1>Legal notice &amp; privacy</h1>
+    <p class="updated">Last updated: July 2026</p>
+  </div>
+</header>
+
+<!-- LEGAL BODY -->
+<main class="legal">
+  <div class="wrap legal-grid">
+    <nav class="toc">
+      <a href="#editeur">Site publisher</a>
+      <a href="#hebergeur">Hosting</a>
+      <a href="#propriete">Intellectual property</a>
+      <a href="#donnees">Personal data</a>
+      <a href="#cookies">Cookies</a>
+      <a href="#responsabilite">Liability</a>
+      <a href="#droit">Governing law</a>
+    </nav>
+
+    <div class="legal-content">
+      <section id="editeur">
+        <h2>1. Site publisher</h2>
+        <p>The mlkLeadHunters website (the "Site") is published by:</p>
+        <ul>
+          <li><span class="placeholder">[First name LAST NAME]</span>, sole trader <span class="placeholder">[or: SASU/EURL + company name]</span></li>
+          <li>Registered office: <span class="placeholder">[full address]</span></li>
+          <li>SIREN / SIRET: <span class="placeholder">[number]</span></li>
+          <li>EU VAT number: <span class="placeholder">[number or "not applicable, art. 293 B of the French Tax Code"]</span></li>
+          <li>Contact: <a href="mailto:hello@mlkleadhunter.com">hello@mlkleadhunter.com</a> — <span class="placeholder">[phone]</span></li>
+        </ul>
+        <p>Publication director: <span class="placeholder">[First name LAST NAME]</span>.</p>
+      </section>
+
+      <section id="hebergeur">
+        <h2>2. Hosting</h2>
+        <p>The Site is hosted by:</p>
+        <ul>
+          <li><span class="placeholder">[Host name]</span></li>
+          <li><span class="placeholder">[host address]</span></li>
+          <li><span class="placeholder">[host phone / website]</span></li>
+        </ul>
+      </section>
+
+      <section id="propriete">
+        <h2>3. Intellectual property</h2>
+        <p>All content on the Site (text, graphics, logo, structure) is the exclusive property of the publisher unless otherwise stated. Any reproduction, representation or distribution, in whole or in part, without prior written authorisation is prohibited and would constitute infringement under articles L.335-2 et seq. of the French Intellectual Property Code.</p>
+      </section>
+
+      <section id="donnees">
+        <h2>4. Personal data (GDPR)</h2>
+        <h3>Data controller</h3>
+        <p><span class="placeholder">[First name LAST NAME]</span>, reachable at <a href="mailto:hello@mlkleadhunter.com">hello@mlkleadhunter.com</a>.</p>
+
+        <h3>Data collected</h3>
+        <p>Through the contact form: name, email address, company name, website and message content. This data is collected only when you submit it voluntarily.</p>
+
+        <h3>Purpose and legal basis</h3>
+        <p>This data is processed in order to respond to your enquiry and, where relevant, to establish a business relationship. The legal basis is the performance of pre-contractual measures taken at your request (art. 6.1.b GDPR) and our legitimate interest in responding to enquiries (art. 6.1.f GDPR).</p>
+
+        <h3>Retention period</h3>
+        <p>Prospect data is kept for a maximum of 3 years after the last contact. Data linked to a contractual relationship is kept for the duration of the relationship and then archived in accordance with legal obligations.</p>
+
+        <h3>Recipients</h3>
+        <p>The data is intended exclusively for the publisher of the Site. It is neither sold nor transferred to third parties. It may pass through our technical processors (hosting, email) in compliance with the GDPR.</p>
+
+        <h3>Your rights</h3>
+        <p>In accordance with the GDPR and the French Data Protection Act, you have the right to access, rectify, erase, restrict, object to and port your data. To exercise these rights, write to <a href="mailto:hello@mlkleadhunter.com">hello@mlkleadhunter.com</a>. You also have the right to lodge a complaint with the CNIL, the French data protection authority (<a href="https://www.cnil.fr" target="_blank" rel="noopener">www.cnil.fr</a>).</p>
+      </section>
+
+      <section id="cookies">
+        <h2>5. Cookies</h2>
+        <p>The Site does not use advertising or tracking cookies. Only technical cookies strictly necessary for the operation of the Site may be set; these do not require prior consent.</p>
+        <p><span class="placeholder">[If you add an analytics tool (Google Analytics, etc.) or a pixel, this section must be updated and a consent banner added.]</span></p>
+      </section>
+
+      <section id="responsabilite">
+        <h2>6. Liability</h2>
+        <p>The publisher strives to ensure the accuracy of the information published on the Site but cannot guarantee it. The Site may contain links to third-party websites; the publisher has no control over such sites and accepts no liability for their content.</p>
+      </section>
+
+      <section id="droit">
+        <h2>7. Governing law</h2>
+        <p>This legal notice is governed by French law. In the event of a dispute that cannot be resolved amicably, the French courts shall have exclusive jurisdiction.</p>
+      </section>
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="foot-cta">
+  <div class="foot-nav">
+    <div>
+      <div class="brand" style="color:#fff">
+        <svg class="mark" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#EF571D" stroke-width="2"/><path d="M12 2v6M12 16v6M2 12h6M16 12h6" stroke="#EF571D" stroke-width="2"/><circle cx="12" cy="12" r="2.4" fill="#EF571D"/></svg>
+        <span><b>mlk</b>LeadHunters</span>
+      </div>
+      <p style="color:#a7a2d6;font-size:13.5px;margin-top:14px;max-width:32ch">Done-for-you cold email for accounting firms. Paris &amp; Île-de-France.</p>
+    </div>
+    <div class="foot-col"><h4>Services</h4><a href="index.html#services">Targeting</a><a href="index.html#services">Deliverability</a><a href="index.html#services">Copywriting</a><a href="index.html#services">Reporting</a></div>
+    <div class="foot-col"><h4>Company</h4><a href="index.html#work">Case studies</a><a href="how-we-work.html">How we work</a><a href="index.html#pricing">Pricing</a><a href="index.html#contact">Contact</a></div>
+    <div class="foot-col"><h4>Get in touch</h4><a href="mailto:hello@mlkleadhunter.com">hello@mlkleadhunter.com</a><a href="index.html#contact">Book a call</a><a href="mentions-legales.html">Legal notice</a></div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 mlkLeadHunters. All rights reserved.</span>
+    <span>Compliant cold email for accountants.</span>
+  </div>
+</footer>
+
+<!-- STICKY MOBILE ACTION BAR -->
+<div class="mobile-bar">
+  <a href="index.html#contact" class="btn btn-dark">Contact us</a>
+  <a href="tel:+33000000000" class="btn btn-primary">Call now</a>
+</div>
+
+<script>
+  function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');document.querySelector('.menu-btn').classList.toggle('open')}
+  function closeMenu(){document.getElementById('mobileMenu').classList.remove('open');document.querySelector('.menu-btn').classList.remove('open')}
+</script>
+</body>
+</html>
