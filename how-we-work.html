@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>How we work — mlkLeadHunters</title>
 <meta name="description" content="From targeting to booked meetings in four steps: verified prospect lists, protected deliverability, compliant copywriting and transparent reporting for accounting firms.">
-<link rel="canonical" href="https://mlkleadhunter.com/how-we-work.html">
+<link rel="canonical" href="https://mlkleadhunters.co.uk/how-we-work.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="mlkLeadHunters">
 <meta property="og:title" content="How we work — mlkLeadHunters">
 <meta property="og:description" content="From targeting to booked meetings in four steps: verified prospect lists, protected deliverability, compliant copywriting and transparent reporting for accounting firms.">
-<meta property="og:url" content="https://mlkleadhunter.com/how-we-work.html">
+<meta property="og:url" content="https://mlkleadhunters.co.uk/how-we-work.html">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="How we work — mlkLeadHunters">
@@ -50,6 +50,8 @@
   .nav-links a{opacity:.85;transition:.15s}
   .nav-links a:hover,.nav-links a.active{opacity:1;color:var(--orange)}
   .nav-cta{padding:10px 18px;font-size:14px}
+  .lang{border:1.5px solid rgba(255,255,255,.4);border-radius:8px;padding:7px 11px;font-size:12.5px;font-weight:700;letter-spacing:.08em;transition:.15s}
+  .lang:hover{background:#fff;color:var(--ink)}
   .menu-btn{display:none;flex-direction:column;justify-content:center;gap:4px;width:42px;height:38px;border:none;background:transparent;cursor:pointer;padding:0}
   .menu-btn span{display:block;height:2px;width:22px;background:var(--paper);border-radius:2px;transition:.2s;margin:0 auto}
   .menu-btn.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
@@ -75,11 +77,9 @@
   .nav{margin-bottom:-74px}
   .page-hero{position:relative;min-height:74vh;display:flex;align-items:flex-start;color:#fff;overflow:hidden;
     background:
-      linear-gradient(90deg, rgba(18,12,7,.9) 0%, rgba(18,12,7,.55) 42%, rgba(18,12,7,.12) 100%),
-      repeating-linear-gradient(90deg, rgba(255,255,255,.055) 0 2px, rgba(0,0,0,.10) 2px 10px),
-      radial-gradient(120% 90% at 78% 25%, rgba(239,87,29,.34), transparent 55%),
-      linear-gradient(120deg,#241809 0%, #6d4a29 58%, #b98a56 100%);
-    clip-path:polygon(0 0,100% 0,100% calc(100% - 52px),calc(100% - 52px) 100%,0 100%)}
+      linear-gradient(90deg, rgba(18,12,7,.82) 0%, rgba(18,12,7,.45) 42%, rgba(18,12,7,.10) 100%),
+      url('hero.jpg') center/cover no-repeat #241809;
+    clip-path:polygon(0 0,100% 0,100% calc(100% - 64px),calc(100% - 300px) calc(100% - 64px),calc(100% - 344px) 100%,0 100%)}
   .page-hero .wrap{padding-top:150px;padding-bottom:96px;position:relative;z-index:2}
   .hero-content{max-width:640px}
   .page-hero h1{font-size:clamp(38px,5.8vw,72px);font-weight:500;margin:18px 0 22px;text-shadow:0 2px 30px rgba(0,0,0,.25)}
@@ -185,9 +185,19 @@
     .wrap{padding:0 20px}
     .inc-grid{grid-template-columns:1fr}
   }
+
+  /* Meridian tab shape with rounded corners on media blocks */
+  .how-media,.deliv-media,.f-media{border-radius:0;clip-path:url(#mediaClip)}
+  @media (max-width:600px){
+    .hero,.page-hero{clip-path:polygon(0 0,100% 0,100% calc(100% - 44px),calc(100% - 150px) calc(100% - 44px),calc(100% - 182px) 100%,0 100%) !important}
+  }
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<clipPath id="mediaClip" clipPathUnits="objectBoundingBox">
+<path d="M 0,0.16 L 0,0.93 Q 0,1 0.026,1 L 0.974,1 Q 1,1 1,0.93 L 1,0.07 Q 1,0 0.974,0 L 0.705,0 Q 0.678,0 0.662,0.024 L 0.604,0.096 Q 0.588,0.12 0.558,0.12 L 0.026,0.12 Q 0,0.12 0,0.16 Z"/>
+</clipPath></defs></svg>
 
 <!-- NAV -->
 <nav class="nav">
@@ -203,7 +213,7 @@
       <a href="index.html#pricing">Pricing</a>
       <a href="index.html#contact">Contact</a>
     </div>
-    <a href="index.html#contact" class="btn btn-primary nav-cta">Book a discovery call</a>
+    <div style="display:flex;gap:10px;align-items:center"><a class="lang" href="https://mlkleadhunters.fr/notre-methode.html">FR</a><a href="index.html#contact" class="btn btn-primary nav-cta">Book a discovery call</a></div>
     <button class="menu-btn" aria-label="Open menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
   </div>
   <div class="mobile-menu" id="mobileMenu">

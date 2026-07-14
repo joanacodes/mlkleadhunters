@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /mentions-legales.html
 
-Sitemap: https://mlkleadhunter.com/sitemap.xml
+Sitemap: https://mlkleadhunters.co.uk/sitemap.xml
