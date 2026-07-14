@@ -284,6 +284,17 @@
       0px calc(100% - 12px)
     )}
   }
+
+  /* SCROLL ANIMATIONS */
+  .reveal{opacity:0;transform:translateY(28px);
+    transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal-img{opacity:0;transform:scale(1.03);
+    transition:opacity 1s ease,transform 1.2s cubic-bezier(.16,1,.3,1)}
+  .reveal-img.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    .reveal,.reveal-img{opacity:1 !important;transform:none !important;transition:none !important}
+  }
 </style>
 </head>
 <body>
@@ -526,6 +537,28 @@
     document.querySelectorAll('.faq-item.open').forEach(function(i){i.classList.remove('open');i.querySelector('.faq-a').style.maxHeight=0});
     if(!open){item.classList.add('open');a.style.maxHeight=a.scrollHeight+'px'}
   }
+</script>
+<script>
+(function(){
+  var heads = document.querySelectorAll('h1, h2');
+  var media = document.querySelectorAll('.how-media,.deliv-media,.f-media,.case,.member .ph,.hero-media');
+  heads.forEach(function(el){ el.classList.add('reveal'); });
+  media.forEach(function(el){ el.classList.add('reveal-img'); });
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.15, rootMargin:'0px 0px -8% 0px'});
+
+  heads.forEach(function(el){ io.observe(el); });
+  media.forEach(function(el){ io.observe(el); });
+
+  // Hero content is above the fold: reveal immediately on load
+  window.addEventListener('load', function(){
+    document.querySelectorAll('.hero h1, .page-hero h1').forEach(function(el){ el.classList.add('in'); });
+  });
+})();
 </script>
 </body>
 </html>
