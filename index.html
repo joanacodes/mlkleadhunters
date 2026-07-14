@@ -168,7 +168,7 @@
 
   /* HOW WE WORK */
   .how{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center}
-  .how-media{border-radius:18px;height:440px;background:radial-gradient(120% 120% at 20% 20%,rgba(200,204,239,.5),transparent 60%),linear-gradient(135deg,#241809,#8a6a44)}
+  .how-media{height:440px;background:radial-gradient(120% 120% at 20% 20%,rgba(200,204,239,.5),transparent 60%),linear-gradient(135deg,#241809,#8a6a44)}
   .how h2{font-size:clamp(26px,3.2vw,40px);font-weight:500;margin-bottom:22px}
   .check{display:flex;gap:14px;padding:16px 0;border-top:1px solid var(--line)}
   .check:last-child{border-bottom:1px solid var(--line)}
@@ -288,18 +288,107 @@
     .results-inner,.band{grid-template-columns:1fr}
   }
 
-  /* Meridian tab shape with rounded corners on media blocks */
-  .how-media,.deliv-media,.f-media{border-radius:0;clip-path:url(#mediaClip)}
   @media (max-width:600px){
     .hero,.page-hero{clip-path:polygon(0 0,100% 0,100% calc(100% - 44px),calc(100% - 150px) calc(100% - 44px),calc(100% - 182px) 100%,0 100%) !important}
+  }
+
+  /* Meridian notch — inset top-left, notch bottom-right, all corners rounded */
+  .how-media,.deliv-media,.f-media{border-radius:0;
+    clip-path:polygon(
+      0px 44px,
+      0px 33px,
+      1px 30px,
+      3px 29px,
+      5px 28px,
+      16px 28px,
+      72px 28px,
+      78px 27px,
+      82px 26px,
+      85px 24px,
+      94px 12px,
+      102px 4px,
+      106px 2px,
+      110px 1px,
+      112px 0px,
+      calc(100% - 16px) 0px,
+      calc(100% - 5px) 0px,
+      calc(100% - 3px) 1px,
+      calc(100% - 1px) 2px,
+      calc(100% - 0px) 5px,
+      calc(100% - 0px) 16px,
+      calc(100% - 0px) calc(100% - 44px),
+      calc(100% - 0px) calc(100% - 33px),
+      calc(100% - 1px) calc(100% - 30px),
+      calc(100% - 3px) calc(100% - 29px),
+      calc(100% - 5px) calc(100% - 28px),
+      calc(100% - 16px) calc(100% - 28px),
+      calc(100% - 72px) calc(100% - 28px),
+      calc(100% - 78px) calc(100% - 27px),
+      calc(100% - 82px) calc(100% - 26px),
+      calc(100% - 85px) calc(100% - 24px),
+      calc(100% - 94px) calc(100% - 12px),
+      calc(100% - 102px) calc(100% - 4px),
+      calc(100% - 106px) calc(100% - 2px),
+      calc(100% - 110px) calc(100% - 1px),
+      calc(100% - 112px) calc(100% - 0px),
+      16px calc(100% - 0px),
+      5px calc(100% - 0px),
+      3px calc(100% - 1px),
+      1px calc(100% - 2px),
+      0px calc(100% - 5px),
+      0px calc(100% - 16px)
+    )}
+  @media (max-width:900px){
+    .how-media{height:300px}
+    .how-media,.deliv-media,.f-media{
+      clip-path:polygon(
+      0px 32px,
+      0px 24px,
+      1px 22px,
+      2px 21px,
+      4px 20px,
+      12px 20px,
+      44px 20px,
+      50px 20px,
+      54px 18px,
+      57px 17px,
+      66px 8px,
+      74px 3px,
+      78px 1px,
+      82px 0px,
+      84px 0px,
+      calc(100% - 12px) 0px,
+      calc(100% - 4px) 0px,
+      calc(100% - 2px) 1px,
+      calc(100% - 1px) 2px,
+      calc(100% - 0px) 4px,
+      calc(100% - 0px) 12px,
+      calc(100% - 0px) calc(100% - 32px),
+      calc(100% - 0px) calc(100% - 24px),
+      calc(100% - 1px) calc(100% - 22px),
+      calc(100% - 2px) calc(100% - 21px),
+      calc(100% - 4px) calc(100% - 20px),
+      calc(100% - 12px) calc(100% - 20px),
+      calc(100% - 44px) calc(100% - 20px),
+      calc(100% - 50px) calc(100% - 20px),
+      calc(100% - 54px) calc(100% - 18px),
+      calc(100% - 57px) calc(100% - 17px),
+      calc(100% - 66px) calc(100% - 8px),
+      calc(100% - 74px) calc(100% - 3px),
+      calc(100% - 78px) calc(100% - 1px),
+      calc(100% - 82px) calc(100% - 0px),
+      calc(100% - 84px) calc(100% - 0px),
+      12px calc(100% - 0px),
+      4px calc(100% - 0px),
+      2px calc(100% - 1px),
+      1px calc(100% - 2px),
+      0px calc(100% - 4px),
+      0px calc(100% - 12px)
+    )}
   }
 </style>
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
-<clipPath id="mediaClip" clipPathUnits="objectBoundingBox">
-<path d="M 0,0.16 L 0,0.93 Q 0,1 0.026,1 L 0.974,1 Q 1,1 1,0.93 L 1,0.07 Q 1,0 0.974,0 L 0.705,0 Q 0.678,0 0.662,0.024 L 0.604,0.096 Q 0.588,0.12 0.558,0.12 L 0.026,0.12 Q 0,0.12 0,0.16 Z"/>
-</clipPath></defs></svg>
 
 <!-- NAV -->
 <nav class="nav">
