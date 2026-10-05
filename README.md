@@ -24,7 +24,7 @@ Set in `hugo.toml`: English pages show `hello@mlkleadhunters.co.uk`, French page
 
 ## Behaviours (assets/js/main.js)
 
-- **Preloader**: MLK → target, mail, handshake → the slash turns → Leadhunters, 1.3 s, once per browser session, skipped for reduced motion.
+- **Preloader**: MLK → target, mail, handshake → the slash turns → Leadhunters, 2 s, once per browser session, skipped for reduced motion.
 - **Sticky glass header**: dark glass over the hero, light glass over the body; the switch happens on scroll.
 - **Bottom dock (phones)**: Contact + Book a call slide up once the hero (or the page head) has scrolled away; hidden on the contact page.
 - **Counters**: any element with `data-count` counts up when it enters the view.

@@ -16,11 +16,11 @@
   }
 
   function init() {
-    // Preloader: once per session, 1.3 s
+    // Preloader: once per session, 2 s
     var pre = document.getElementById('preloader');
     if (pre) {
       if (session.get('mlk-preloaded') || reduce) { pre.classList.add('is-done'); }
-      else { session.set('mlk-preloaded', '1'); setTimeout(function () { pre.classList.add('is-done'); }, 1400); }
+      else { session.set('mlk-preloaded', '1'); setTimeout(function () { pre.classList.add('is-done'); }, 2100); }
     }
 
     // Page entrance
@@ -33,7 +33,7 @@
     // Hero entrance
     var glass = document.querySelector('.glass--hero');
     if (glass) {
-      var delay = (pre && !pre.classList.contains('is-done')) ? 1150 : 80;
+      var delay = (pre && !pre.classList.contains('is-done')) ? 1800 : 80;
       var ready = function () { glass.classList.add('is-ready'); };
       if (reduce) { ready(); } else { setTimeout(ready, delay); }
     }
