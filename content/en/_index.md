@@ -1,0 +1,33 @@
+---
+title: "MLK Leadhunters"
+hero: true
+hero_label: "B2B cold email, done for you"
+hero_title: "Qualified meetings, <span class='hl'>without chasing anyone.</span>"
+hero_lead: "We build the sending infrastructure, write the emails, run the campaigns and send you the replies that matter. <strong>You talk to people who already want to talk to you.</strong>"
+stats:
+  - value: "25 k"
+    note: "<span class='hl--o'>emails</span> delivered every month"
+  - value: "31 %"
+    note: "average <span class='hl--o'>reply rate</span>"
+  - value: "94 %"
+    note: "<span class='hl--o'>inbox</span> placement"
+services_title: "Everything a campaign needs, <span class='hl'>handled end to end.</span>"
+services_lead: "No mass mailing, no risk to your reputation. Short, precise lists, emails written by hand and validated by you, and only the replies worth your time in your inbox."
+how_title: "From a list of names to <span class='hl--o'>a full calendar.</span>"
+how_lead: "Three steps, one point of contact. Most clients receive their first positive replies within three weeks of launch."
+steps:
+  - title: "Targeting"
+    icon: "target"
+    body: "We define the offer we are promoting and build a verified list of the companies and people most likely to need it."
+  - title: "Writing and sending"
+    icon: "send"
+    body: "Three short emails per sequence, in your tone, sent from dedicated domains so your main one is never at risk."
+  - title: "Replies, to you"
+    icon: "calendar"
+    body: "We read every reply and forward the positive ones to you the same day, with the thread and what we know. You answer, you book, you meet."
+offers_title: "<span class='hl'>Three ways</span> to work with us."
+offers_lead: "The infrastructure alone, the whole outreach, or only the leads. No prices on this page: every scope is quoted after a fifteen-minute call."
+projects_title: "Campaigns that turned into <span class='hl--o'>calls.</span>"
+projects_lead: "Two clients, two very different markets, the same method."
+blog_title: "What people ask us about <span class='hl'>cold email.</span>"
+---

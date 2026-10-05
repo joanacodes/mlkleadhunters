@@ -1,0 +1,3 @@
+{{- $t := lower (index . 0 | default "") -}}
+{{- $m := dict "basics" "book" "bases" "book" "legal" "scale" "juridique" "scale" "infrastructure" "server" "numbers" "chart" "chiffres" "chart" "copy" "pen" "rédaction" "pen" "targeting" "target" "ciblage" "target" "replies" "inbox" "réponses" "inbox" -}}
+{{- partial "icon.html" (index $m $t | default "book") -}}

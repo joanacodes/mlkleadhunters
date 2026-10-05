@@ -1,0 +1,10 @@
+{{ $current := .Language.Lang }}
+{{ $page := . }}
+<div class="lang" role="group" aria-label="{{ i18n "language" }}">
+{{ range .Site.Languages }}
+  {{ $lang := .Lang }}
+  {{ $url := cond (eq $lang "en") "/" (printf "/%s/" $lang) }}
+  {{ if eq $lang $current }}{{ $url = $page.RelPermalink }}{{ else }}{{ range $page.Translations }}{{ if eq .Language.Lang $lang }}{{ $url = .RelPermalink }}{{ end }}{{ end }}{{ end }}
+  <a href="{{ $url }}" lang="{{ $lang }}" hreflang="{{ $lang }}"{{ if eq $lang $current }} aria-current="true"{{ end }}>{{ upper $lang }}</a>
+{{ end }}
+</div>

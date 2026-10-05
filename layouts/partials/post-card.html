@@ -1,0 +1,6 @@
+<a class="post-card" href="{{ .RelPermalink }}">
+  <span class="card__top">{{ partial "tag-icon.html" .Params.tags }}<span class="post-card__meta">{{ .Date | time.Format ":date_medium" }} · {{ .ReadingTime }} {{ i18n "min_read" }}</span></span>
+  <span class="post-card__title">{{ .Title }}</span>
+  <span class="post-card__desc">{{ .Description }}</span>
+  <span class="post-card__foot"><span class="link">{{ i18n "read_more" }} {{ partial "arrow.html" . }}</span></span>
+</a>

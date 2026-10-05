@@ -1,0 +1,13 @@
+{{ define "main" }}
+<div class="container">
+  <div class="page-head section-head">
+    <div class="section-head__top">{{ partial "icon.html" "star" }}<span class="label">{{ i18n "projects" }}</span></div>
+    <h1 class="title">{{ with .Params.heading }}{{ . | safeHTML }}{{ else }}{{ .Title }}{{ end }}</h1>
+    {{ with .Params.lead }}<p class="lead">{{ . | safeHTML }}</p>{{ end }}
+  </div>
+  <div class="projects-grid" style="margin-bottom: clamp(48px, 7vw, 96px)">
+    {{ range .Pages.ByWeight }}<div class="reveal">{{ partial "project-card.html" . }}</div>{{ end }}
+  </div>
+</div>
+{{ partial "cta.html" . }}
+{{ end }}

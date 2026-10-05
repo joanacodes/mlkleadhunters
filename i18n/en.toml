@@ -1,0 +1,91 @@
+[book_call]
+other = "Book a discovery call"
+[book_short]
+other = "Book a call"
+[see_how]
+other = "See how it works"
+[read_more]
+other = "Read"
+[read_case]
+other = "Read the case"
+[all_projects]
+other = "All projects"
+[all_posts]
+other = "All articles"
+[latest_posts]
+other = "From the blog"
+[min_read]
+other = "min read"
+[contact_us]
+other = "Write to us"
+[what_we_do]
+other = "What we do"
+[how_it_works]
+other = "How it works"
+[offers]
+other = "Offers"
+[projects]
+other = "Projects"
+[results]
+other = "Results"
+[review]
+other = "What they say"
+[popular]
+other = "Most chosen"
+[menu]
+other = "Menu"
+[close]
+other = "Close"
+[language]
+other = "Language"
+[legal]
+other = "Legal notice"
+[rights]
+other = "All rights reserved."
+[back_to_blog]
+other = "Back to the blog"
+[back_to_projects]
+other = "Back to the projects"
+[back_to_services]
+other = "All services"
+[related]
+other = "Keep reading"
+[client]
+other = "Client"
+[sector]
+other = "Sector"
+[period]
+other = "Period"
+[service_used]
+other = "Scope"
+[choose]
+other = "Choose this offer"
+[talk]
+other = "Let's talk about it"
+[status]
+other = "Taking new clients"
+[cta_title]
+other = "Let's start the conversation."
+[cta_lead]
+other = "A fifteen-minute call, no commitment: an honest view of your market and a clear plan, whether we work together or not."
+[contents]
+other = "Contents"
+[contact]
+other = "Contact"
+[read_review]
+other = "Read more"
+[close_review]
+other = "Read less"
+[website]
+other = "Website"
+[visit_site]
+other = "Visit the site"
+
+[read_review_short]
+other = "Read the review"
+[consent]
+other = "I accept to be contacted regarding my request."
+[rule_title]
+other = "You answer. We never write in your name."
+[rule_body]
+other = "We read and sort every reply, and the positive ones reach your inbox the same day with the thread and what we know about the company. <strong>The conversation with a prospect is yours</strong>: you write back from your own address, you book the meeting, you build the relationship. We make sure the right replies reach you fast and without noise."

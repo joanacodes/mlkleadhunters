@@ -1,0 +1,25 @@
+{{ define "main" }}
+<div class="container">
+  <div class="page-head section-head">
+    {{ if or .Params.kicker .Params.icon }}<div class="section-head__top">{{ with .Params.icon }}{{ partial "icon.html" . }}{{ end }}{{ with .Params.kicker }}<span class="label">{{ . }}</span>{{ end }}</div>{{ end }}
+    <h1 class="title">{{ with .Params.heading }}{{ . | safeHTML }}{{ else }}{{ .Title }}{{ end }}</h1>
+    {{ with .Params.lead }}<p class="lead">{{ . | safeHTML }}</p>{{ end }}
+  </div>
+  <div class="feature" style="align-items:start;padding-bottom: clamp(48px, 7vw, 96px)">
+    <div class="prose">{{ .Content }}</div>
+    <form class="form" action="https://formsubmit.co/{{ .Site.Params.email }}" method="POST" accept-charset="UTF-8">
+      <input type="hidden" name="_subject" value="{{ .Site.Title }} — {{ .Title }}">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="{{ "thanks/" | absLangURL }}">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+      {{ range .Params.fields }}
+      <div class="field"><label for="f-{{ .name }}">{{ .label }}</label>{{ if eq .type "textarea" }}<textarea id="f-{{ .name }}" name="{{ .name }}" rows="5"{{ if .required }} required{{ end }}></textarea>{{ else }}<input id="f-{{ .name }}" type="{{ .type | default "text" }}" name="{{ .name }}"{{ if .required }} required{{ end }}>{{ end }}</div>
+      {{ end }}
+      <div class="field field--check"><input id="f-consent" type="checkbox" name="consent" value="yes" required><label for="f-consent">{{ i18n "consent" }}</label></div>
+      <button class="button" type="submit">{{ .Params.submit }}</button>
+      <span class="form__note">{{ .Params.note | safeHTML }}</span>
+    </form>
+  </div>
+</div>
+{{ end }}

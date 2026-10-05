@@ -1,0 +1,22 @@
+{{ define "main" }}
+<div class="container">
+  <div class="page-head section-head">
+    <div class="section-head__top">{{ partial "icon.html" (.Params.icon | default "list") }}<span class="label">{{ i18n "what_we_do" }}</span></div>
+    <h1 class="title">{{ with .Params.heading }}{{ . | safeHTML }}{{ else }}{{ .Title }}{{ end }}</h1>
+    {{ with .Params.lead }}<p class="lead">{{ . | safeHTML }}</p>{{ end }}
+  </div>
+  <div class="feature" style="align-items:start;padding-bottom: clamp(48px, 7vw, 96px)">
+    <div class="prose">{{ .Content }}</div>
+    <div style="display:grid;gap:24px">
+      {{ with .Params.image }}<div class="feature__photo reveal" style="background-image:url('{{ . | relURL }}')"></div>{{ end }}
+      {{ with .Params.points }}
+      <div class="feature__list reveal" data-delay="1">
+        {{ range . }}<div class="feature__row"><strong>{{ with .icon }}{{ partial "icon.html" . }} {{ end }}{{ .title }}</strong><span>{{ .body }}</span></div>{{ end }}
+      </div>
+      {{ end }}
+      <a class="link" href="{{ .Parent.RelPermalink }}">{{ i18n "back_to_services" }} {{ partial "arrow.html" . }}</a>
+    </div>
+  </div>
+</div>
+{{ partial "cta.html" . }}
+{{ end }}
