@@ -89,18 +89,6 @@
       }
     }
 
-    // Reviews: read more
-    document.querySelectorAll('[data-review]').forEach(function (r) {
-      var btn = r.querySelector('.review__more'), txt = r.querySelector('.review__text'); if (!btn || !txt) { return; }
-      var clamped = txt.scrollHeight > txt.clientHeight + 2;
-      if (!clamped) { btn.style.display = 'none'; return; }
-      btn.addEventListener('click', function () {
-        var open = r.classList.toggle('is-open');
-        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-        btn.firstChild.textContent = open ? btn.getAttribute('data-less') : btn.getAttribute('data-more');
-      });
-    });
-
     // Contents box: open on desktop, collapsed on phones
     var toc = document.querySelector('[data-toc]');
     if (toc) { var wide = window.matchMedia('(min-width: 1000px)'); var sync = function () { toc.open = wide.matches; }; sync(); if (wide.addEventListener) { wide.addEventListener('change', sync); } }

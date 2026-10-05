@@ -9,7 +9,8 @@
   // Old page of the previous site: its sections now live on the home page (#how) and in Services.
   (function () {
     var to = { targeting: '/services/targeting-and-lists/', copywriting: '/services/copywriting/', deliverability: '/services/deliverability/', reporting: '/services/replies-and-reporting/' };
-    location.replace(to[location.hash.slice(1)] || '/#how');
+    var k = location.hash.slice(1);
+    location.replace(Object.prototype.hasOwnProperty.call(to, k) ? to[k] : '/#how');
   })();
 </script>
 <meta http-equiv="refresh" content="0; url=/#how">

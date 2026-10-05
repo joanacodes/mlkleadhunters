@@ -14,11 +14,11 @@
 </section>
 
 {{ with .Params.review }}
-<section class="section container" id="{{ i18n "anchor_review" }}" aria-label="{{ i18n "review" }}">
-  <div class="section-head"><div class="section-head__top">{{ partial "icon.html" "chat" }}<span class="label">{{ i18n "review" }}</span></div></div>
+<section class="section container" aria-label="{{ i18n "review" }}">
+  <div class="section-head" id="{{ i18n "anchor_review" }}"><div class="section-head__top">{{ partial "icon.html" "chat" }}<span class="label">{{ i18n "review" }}</span></div></div>
   <figure class="review review--full reveal">
     {{ partial "stars.html" (int .rating) }}
-    <blockquote class="review__quote"><p class="review__text">« {{ .text }} »</p></blockquote>
+    <blockquote class="review__quote"><p class="review__text">{{ i18n "quote_open" }}{{ .text }}{{ i18n "quote_close" }}</p></blockquote>
     <figcaption class="review__who"><strong>{{ .author }}</strong><span>{{ .role }}</span></figcaption>
   </figure>
 </section>

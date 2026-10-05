@@ -5,6 +5,6 @@
     {{ with .Params.review }}{{ partial "stars.html" (int .rating) }}{{ end }}
     <span class="project-card__meta">{{ .Params.sector }}{{ with .Params.period }} · {{ . }}{{ end }}</span>
     <span class="project-card__name">{{ .Title }}</span>
-    {{ with .Params.review }}<span class="project-card__review">« {{ truncate 150 .text }} »</span><span class="link">{{ i18n "read_review_short" }} {{ partial "arrow.html" . }}</span>{{ end }}
+    {{ with .Params.review }}<span class="project-card__review">{{ i18n "quote_open" }}{{ truncate 150 .text }}{{ i18n "quote_close" }}</span><span class="link">{{ i18n "read_review_short" }} {{ partial "arrow.html" . }}</span>{{ end }}
   </div>
 </a>

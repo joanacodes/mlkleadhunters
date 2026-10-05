@@ -72,10 +72,6 @@ other = "A fifteen-minute call, no commitment: an honest view of your market and
 other = "Contents"
 [contact]
 other = "Contact"
-[read_review]
-other = "Read more"
-[close_review]
-other = "Read less"
 [website]
 other = "Website"
 [visit_site]
@@ -95,3 +91,9 @@ other = "We read and sort every reply, and the positive ones reach your inbox th
 other = "book-a-call"
 [anchor_review]
 other = "review"
+
+# Quotation marks around client reviews
+[quote_open]
+other = "“"
+[quote_close]
+other = "”"

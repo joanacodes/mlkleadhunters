@@ -72,10 +72,6 @@ other = "Un appel de quinze minutes, sans engagement : un avis honnête sur votr
 other = "Sommaire"
 [contact]
 other = "Contact"
-[read_review]
-other = "Lire la suite"
-[close_review]
-other = "Réduire"
 [website]
 other = "Site web"
 [visit_site]
@@ -95,3 +91,9 @@ other = "Nous lisons et trions chaque réponse, et les positives arrivent dans v
 other = "reserver-un-appel"
 [anchor_review]
 other = "avis"
+
+# Quotation marks around client reviews
+[quote_open]
+other = "«\u00a0"
+[quote_close]
+other = "\u00a0»"

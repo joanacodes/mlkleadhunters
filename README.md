@@ -10,7 +10,7 @@ The main Lead Hunters site, in the Lumière direction: graphite and ice, one blu
 
 1. Push this folder to the `mlkleadhunters` repository (branch `main`).
 2. Repository → Settings → Pages → Source: **GitHub Actions**. The workflow in `.github/workflows/hugo.yml` builds and publishes on every push.
-3. The domain is the one entered in Settings → Pages → **Custom domain** (with GitHub Actions, GitHub ignores the `static/CNAME` file, which is kept only as a reminder). The site is meant to live on `mlkleadhunters.com`. At your registrar, redirect `mlkleadhunters.co.uk` → `https://mlkleadhunters.com/` (301) and `mlkleadhunters.fr` → `https://mlkleadhunters.com/fr/` (301). GitHub Pages serves one domain per repository, so the regional domains redirect to it; the English pages speak to the UK, the French pages to France.
+3. The domain is the one entered in Settings → Pages → **Custom domain** (with GitHub Actions, GitHub ignores the `static/CNAME` file, which is kept only as a reminder). The site is meant to live on `mlkleadhunters.com`. At your registrar, redirect `mlkleadhunters.co.uk` → `https://mlkleadhunters.com/` (301, keeping the path, so old links such as `/how-we-work.html` still reach their redirect) and `mlkleadhunters.fr` → `https://mlkleadhunters.com/fr/` (301). GitHub Pages serves one domain per repository, so the regional domains redirect to it; the English pages speak to the UK, the French pages to France.
 
 ## Emails
 
@@ -36,7 +36,7 @@ Set in `hugo.toml`: English pages show `hello@mlkleadhunters.co.uk`, French page
 - **Book a call**: every booking button (header, menu, dock, hero, offers, blog, the closing band) goes to the form on the contact page: `/contact/#book-a-call`, `/fr/contact/#reserver-un-appel`. The anchor names are in `i18n/*.toml` (`anchor_book`); the link is built in `layouts/partials/book-url.html`. To use Calendly instead, put the full link in `bookingUrl` in `hugo.toml`.
 - **Contact / Write to us** links go to the top of the contact page.
 - **Project cards** open the project page on its review: `#review`, `#avis` (`anchor_review`). The full review is the second section of each project page.
-- **Old addresses** from the previous site: `/how-we-work.html` → the How it works section of the home page (`/#how`; its old `#targeting`, `#copywriting`, `#deliverability` and `#reporting` sections go to the matching service), see `static/how-we-work.html`; `/mentions-legales.html` → `/legal/` (alias in `content/en/legal.md`).
+- **Old addresses** from the previous site: `/how-we-work.html` → the How it works section of the home page (`/#how`; its old `#targeting`, `#copywriting`, `#deliverability` and `#reporting` sections go to the matching service), see `static/how-we-work.html`; `/mentions-legales.html` → `/legal/` (alias in `content/en/legal.md`); the old home anchors `/#contact` → the booking form, `/#pricing` → `#offers`, `/#work` → `#projects` (script at the end of `layouts/index.html`).
 
 ## Structure
 

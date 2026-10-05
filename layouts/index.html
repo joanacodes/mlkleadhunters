@@ -85,5 +85,8 @@
   </div>
 </section>
 
+{{/* Anchors of the previous one-page site: #contact was its booking form, #pricing and #work its offers and projects. */}}
+<script>(function(){var m={contact:'{{ partial "book-url.html" . }}',pricing:'#offers',work:'#projects'},k=location.hash.slice(1);if(Object.prototype.hasOwnProperty.call(m,k)){location.replace(m[k]);}})();</script>
+
 {{ partial "cta.html" . }}
 {{ end }}

@@ -49,6 +49,7 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
 .prose { max-width: 66ch; }
 .prose p { margin: 0 0 1.2em; }
 .prose h2 { font-size: clamp(26px, 3vw, 34px); line-height: 1.1; letter-spacing: -.025em; margin: 2em 0 .6em; }
+.feature > .prose > :first-child { margin-top: 0; }
 .prose h3 { font-size: clamp(20px, 2.2vw, 24px); line-height: 1.2; letter-spacing: -.015em; margin: 1.6em 0 .5em; }
 .prose ul, .prose ol { padding-left: 1.2em; margin: 0 0 1.2em; }
 .prose li { margin: .35em 0; }
@@ -227,17 +228,12 @@ a.card:hover { background: #fff; }
 .review { display: grid; gap: 20px; padding: clamp(28px, 4vw, 48px); border: 1px solid var(--line); background: var(--ice); }
 .on-dark .review { background: var(--graphite); }
 .review__quote { font-size: clamp(20px, 2.4vw, 28px); line-height: 1.25; letter-spacing: -.02em; font-weight: 500; max-width: 36ch; }
-.review__text { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; transition: none; }
-.review.is-open .review__text { display: block; -webkit-line-clamp: unset; overflow: visible; }
-.review__more { appearance: none; background: transparent; border: 0; padding: 0; font: 500 14px/1 var(--font); color: var(--orange); cursor: pointer; display: inline-flex; align-items: center; gap: 8px; border-bottom: 1px solid var(--orange); padding-bottom: 3px; }
-.review__more svg { width: 14px; height: 14px; transition: transform .3s var(--ease); }
-.review.is-open .review__more svg { transform: rotate(180deg); }
 .review__site { font-size: 14px; }
 .review__who { display: grid; gap: 4px; font-size: 14px; color: var(--muted); }
 .review__who strong { color: var(--ink); font-weight: 500; }
 .review--full { margin: 0; gap: 24px; }
+.review--full .stars svg { width: 20px; height: 20px; }
 .review--full .review__quote { margin: 0; max-width: 62ch; font-size: clamp(18px, 1.8vw, 22px); line-height: 1.5; letter-spacing: -.01em; }
-.review--full .review__text { display: block; -webkit-line-clamp: unset; overflow: visible; }
 
 /* Facts list (project pages) */
 .facts { display: grid; grid-template-columns: 1fr; gap: 0; border-top: 1px solid var(--line); }
