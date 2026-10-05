@@ -66,6 +66,7 @@ disableKinds = ["taxonomy", "term"]
     title = "MLK Leadhunters"
     [languages.fr.params]
       email = "hello@mlkleadhunters.fr"
+      formEmail = "contact@mlkleadhunters.fr"
       tagline = "Le cold email qui remplit votre agenda."
       description = "Cold email B2B clé en main : ciblage, infrastructure, rédaction et réponses, pour des rendez-vous qualifiés dans votre agenda."
     [[languages.fr.menus.main]]

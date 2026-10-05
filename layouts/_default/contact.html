@@ -7,7 +7,7 @@
   </div>
   <div class="feature" id="{{ i18n "anchor_book" }}" style="align-items:start;padding-bottom: clamp(48px, 7vw, 96px)">
     <div class="prose">{{ .Content }}</div>
-    <form class="form" action="https://formsubmit.co/{{ .Site.Params.email }}" method="POST" accept-charset="UTF-8">
+    <form class="form" action="https://formsubmit.co/{{ .Site.Params.formEmail | default .Site.Params.email }}" method="POST" accept-charset="UTF-8">
       <input type="hidden" name="_subject" value="{{ .Site.Title }} — {{ .Title }}">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_captcha" value="false">

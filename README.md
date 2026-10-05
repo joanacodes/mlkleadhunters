@@ -14,7 +14,7 @@ The main Lead Hunters site, in the Lumière direction: graphite and ice, one blu
 
 ## Emails
 
-Set in `hugo.toml`: English pages show `hello@mlkleadhunters.co.uk`, French pages `hello@mlkleadhunters.fr`, and the legal notice lists `hello@mlkleadhunters.com` as the main address. The contact form posts to the address of the page's language. Create the three mailboxes (or aliases to one inbox) before launch.
+Set in `hugo.toml`: English pages show `hello@mlkleadhunters.co.uk`, French pages `hello@mlkleadhunters.fr`, and the legal notice lists `hello@mlkleadhunters.com` as the main address. The contact form posts to the address of the page's language, except in French, where it goes to `contact@mlkleadhunters.fr` (`formEmail` in `hugo.toml`; a language without `formEmail` uses its `email`). Create the three mailboxes (or aliases to one inbox) before launch.
 
 ## Colour in the text
 
@@ -50,7 +50,7 @@ Set in `hugo.toml`: English pages show `hello@mlkleadhunters.co.uk`, French page
 ## Before going live
 
 - [ ] **Project figures**: replace the `[—]` values in `content/*/projects/pilotech.md` and `eden-corporate-mobility.md` with the real numbers. Until then the Results block is hidden: any figure still in brackets is left off the page.
-- [ ] **Form**: the contact form posts to formsubmit.co with a table template, no captcha page (honeypot only), a required consent checkbox, and redirects to `/thanks/` (or `/fr/thanks/`). The first submission from each language sends an activation email to that language's address (hello@mlkleadhunters.co.uk / .fr); click it once. Or swap the `action` in `layouts/_default/contact.html` for Formspree or any other endpoint.
+- [ ] **Form**: the contact form posts to formsubmit.co with a table template, no captcha page (honeypot only), a required consent checkbox, and redirects to `/thanks/` (or `/fr/thanks/`). The first submission from each language sends an activation email to the form's address (hello@mlkleadhunters.co.uk in English, contact@mlkleadhunters.fr in French); click it once. Or swap the `action` in `layouts/_default/contact.html` for Formspree or any other endpoint.
 - [ ] **Legal notice**: complete the company name, legal form, registration number and address in `content/*/legal.md`.
 - [ ] **Stats on the home page** (25 k / 31 % / 94 %) are the ones from the current site: confirm they still hold, in `content/*/_index.md`.
 - [ ] **Web Studio** and the accountants site are separate: this site links to neither. Add links in `layouts/partials/footer.html` when they are live.

@@ -23,7 +23,7 @@ fields:
     type: "textarea"
     required: true
 submit: "Envoyer ma demande"
-note: "Arrive directement sur <a href='mailto:hello@mlkleadhunters.fr'>hello@mlkleadhunters.fr</a>. Pas de newsletter, pas de relances automatiques."
+note: "Arrive directement sur <a href='mailto:contact@mlkleadhunters.fr'>contact@mlkleadhunters.fr</a>. Pas de newsletter, pas de relances automatiques."
 ---
 ## Et ensuite
 
