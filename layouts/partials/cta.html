@@ -1,0 +1,13 @@
+<section class="glass glass--center on-dark" aria-label="{{ i18n "book_call" }}">
+  <div class="glass__photo" style="background-image:url('{{ "images/footer-glass.jpg" | relURL }}')"></div>
+  <div class="glass__tint"></div>
+  <div class="glass__day"></div>
+  <div class="glass__grain"></div>
+  <div class="glass__content container cta cta--center">
+    <div class="cta__inner">
+      <h2 class="title reveal">{{ i18n "cta_title" | safeHTML }}</h2>
+      <p class="lead reveal" data-delay="1">{{ i18n "cta_lead" }}</p>
+      <a class="button reveal" data-delay="2" href="{{ partial "book-url.html" . }}">{{ i18n "book_call" }}</a>
+    </div>
+  </div>
+</section>

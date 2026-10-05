@@ -1,0 +1,10 @@
+<a class="project-card" href="{{ .RelPermalink }}{{ with .Params.review }}#{{ i18n "anchor_review" }}{{ end }}">
+  <div class="glass__photo" style="background-image:url('{{ .Params.image | relURL }}')"></div>
+  <div class="project-card__tint"></div>
+  <div class="project-card__body">
+    {{ with .Params.review }}{{ partial "stars.html" (int .rating) }}{{ end }}
+    <span class="project-card__meta">{{ .Params.sector }}{{ with .Params.period }} · {{ . }}{{ end }}</span>
+    <span class="project-card__name">{{ .Title }}</span>
+    {{ with .Params.review }}<span class="project-card__review">{{ i18n "quote_open" }}{{ truncate 150 .text }}{{ i18n "quote_close" }}</span><span class="link">{{ i18n "read_review_short" }} {{ partial "arrow.html" . }}</span>{{ end }}
+  </div>
+</a>

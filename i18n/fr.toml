@@ -1,0 +1,99 @@
+[book_call]
+other = "Réserver un appel découverte"
+[book_short]
+other = "Réserver un appel"
+[see_how]
+other = "Voir comment ça marche"
+[read_more]
+other = "Lire"
+[read_case]
+other = "Lire l’étude de cas"
+[all_projects]
+other = "Tous les projets"
+[all_posts]
+other = "Tous les articles"
+[latest_posts]
+other = "Sur le blog"
+[min_read]
+other = "min de lecture"
+[contact_us]
+other = "Nous écrire"
+[what_we_do]
+other = "Ce que nous faisons"
+[how_it_works]
+other = "Comment ça marche"
+[offers]
+other = "Formules"
+[projects]
+other = "Projets"
+[results]
+other = "Résultats"
+[review]
+other = "Ils en parlent"
+[popular]
+other = "La plus choisie"
+[menu]
+other = "Menu"
+[close]
+other = "Fermer"
+[language]
+other = "Langue"
+[legal]
+other = "Mentions légales"
+[rights]
+other = "Tous droits réservés."
+[back_to_blog]
+other = "Retour au blog"
+[back_to_projects]
+other = "Retour aux projets"
+[back_to_services]
+other = "Tous les services"
+[related]
+other = "À lire ensuite"
+[client]
+other = "Client"
+[sector]
+other = "Secteur"
+[period]
+other = "Période"
+[service_used]
+other = "Périmètre"
+[choose]
+other = "Choisir cette formule"
+[talk]
+other = "Parlons-en"
+[status]
+other = "Nous prenons de nouveaux clients"
+[cta_title]
+other = "Lançons la conversation."
+[cta_lead]
+other = "Un appel de quinze minutes, sans engagement : un avis honnête sur votre marché et un plan clair, que nous travaillions ensemble ou non."
+[contents]
+other = "Sommaire"
+[contact]
+other = "Contact"
+[website]
+other = "Site web"
+[visit_site]
+other = "Voir le site"
+
+[read_review_short]
+other = "Lire l’avis"
+[consent]
+other = "J’accepte d’être contacté·e au sujet de ma demande."
+[rule_title]
+other = "Vous répondez. Nous n’écrivons jamais en votre nom."
+[rule_body]
+other = "Nous lisons et trions chaque réponse, et les positives arrivent dans votre boîte le jour même avec le fil et ce que nous savons de l’entreprise. <strong>La conversation avec un prospect vous appartient</strong> : vous répondez depuis votre adresse, vous posez le rendez-vous, vous construisez la relation. Nous faisons en sorte que les bonnes réponses vous parviennent vite et sans bruit."
+
+# Anchors (the part after # in links)
+[anchor_book]
+other = "reserver-un-appel"
+[anchor_review]
+other = "avis"
+
+# Quotation marks around client reviews
+[quote_open]
+other = "«\u00a0"
+[quote_close]
+other = "\u00a0»"

@@ -1,0 +1,27 @@
+{{ define "main" }}
+<div class="container">
+  <div class="page-head section-head" style="max-width: 820px">
+    <div class="section-head__top">{{ partial "tag-icon.html" .Params.tags }}<span class="label">Blog</span></div>
+    <h1 class="title">{{ .Title }}</h1>
+    {{ with .Description }}<p class="lead">{{ . }}</p>{{ end }}
+    <div class="article__meta"><span>{{ .Date | time.Format ":date_long" }}</span><span>{{ .ReadingTime }} {{ i18n "min_read" }}</span></div>
+  </div>
+  <div class="article" style="padding-bottom: clamp(48px, 7vw, 96px)">
+    <aside class="aside">
+      {{ with .TableOfContents }}<details class="tocbox" data-toc><summary><span class="label label--plain">{{ i18n "contents" }}</span></summary><div class="tocbox__body">{{ . }}</div></details>{{ end }}
+      <div class="aside__box aside__box--cta">
+        <span class="label label--plain">MLK Leadhunters</span>
+        <p>{{ .Site.Params.description }}</p>
+        <a class="button button--inverse button--sm" href="{{ partial "book-url.html" . }}">{{ i18n "book_short" }}</a>
+      </div>
+    </aside>
+    <article class="prose">{{ .Content }}</article>
+  </div>
+  {{ $related := .Site.RegularPages.Related . | first 3 }}
+  {{ with $related }}
+  <div class="section-head"><div class="section-head__top">{{ partial "icon.html" "book" }}<span class="label">{{ i18n "related" }}</span></div></div>
+  <div class="posts" style="margin-bottom: clamp(48px, 7vw, 96px)">{{ range . }}{{ partial "post-card.html" . }}{{ end }}</div>
+  {{ end }}
+</div>
+{{ partial "cta.html" . }}
+{{ end }}

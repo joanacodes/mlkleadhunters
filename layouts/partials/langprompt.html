@@ -1,0 +1,8 @@
+{{ $other := "" }}{{ $url := "" }}
+{{ range .Translations }}{{ $other = .Language.Lang }}{{ $url = .RelPermalink }}{{ end }}
+{{ if not $url }}{{ $other = cond (eq .Language.Lang "en") "fr" "en" }}{{ $url = cond (eq $other "en") "/" "/fr/" }}{{ end }}
+<div class="langprompt" id="langprompt" data-page-lang="{{ .Language.Lang }}" data-other="{{ $other }}" hidden>
+  <span class="langprompt__text">{{ if eq .Language.Lang "en" }}Vous préférez le français ?{{ else }}Prefer English?{{ end }}</span>
+  <a class="langprompt__go" href="{{ $url }}" lang="{{ $other }}">{{ if eq .Language.Lang "en" }}Voir en français{{ else }}View in English{{ end }}</a>
+  <button class="langprompt__close" type="button" aria-label="{{ i18n "close" }}">×</button>
+</div>

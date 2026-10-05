@@ -1,0 +1,52 @@
+{{ define "main" }}
+<section class="glass glass--hero on-dark" aria-label="{{ .Title }}">
+  <div class="glass__photo" style="background-image:url('{{ .Params.image | relURL }}')"></div>
+  <div class="glass__tint"></div>
+  <div class="glass__day"></div>
+  <div class="glass__grain"></div>
+  <div class="glass__content container hero" style="min-height:72vh">
+    <div class="hero__body">
+      <span class="label">{{ .Params.sector }}{{ with .Params.period }} · {{ . }}{{ end }}</span>
+      <h1 class="display">{{ .Title }}</h1>
+      <p class="lead">{{ .Params.lead | safeHTML }}</p>
+    </div>
+  </div>
+</section>
+
+{{ with .Params.review }}
+<section class="section container" aria-label="{{ i18n "review" }}">
+  <div class="section-head" id="{{ i18n "anchor_review" }}"><div class="section-head__top">{{ partial "icon.html" "chat" }}<span class="label">{{ i18n "review" }}</span></div></div>
+  <figure class="review review--full reveal">
+    {{ partial "stars.html" (int .rating) }}
+    <blockquote class="review__quote"><p class="review__text">{{ i18n "quote_open" }}{{ .text }}{{ i18n "quote_close" }}</p></blockquote>
+    <figcaption class="review__who"><strong>{{ .author }}</strong><span>{{ .role }}</span></figcaption>
+  </figure>
+</section>
+{{ end }}
+
+<section class="section{{ if .Params.review }} section--line{{ end }} container">
+  <div class="feature" style="align-items:start">
+    <div class="prose">{{ .Content }}</div>
+    <div style="display:grid;gap:32px">
+      <dl class="facts reveal">
+        <div class="fact"><dt>{{ i18n "client" }}</dt><dd>{{ .Params.client }}</dd></div>
+        <div class="fact"><dt>{{ i18n "sector" }}</dt><dd>{{ .Params.sector }}</dd></div>
+        {{ with .Params.period }}<div class="fact"><dt>{{ i18n "period" }}</dt><dd>{{ . }}</dd></div>{{ end }}
+        {{ with .Params.scope }}<div class="fact"><dt>{{ i18n "service_used" }}</dt><dd>{{ . }}</dd></div>{{ end }}
+        {{ with .Params.website }}<div class="fact"><dt>{{ i18n "website" }}</dt><dd><a class="link review__site" href="{{ . }}" target="_blank" rel="noopener">{{ i18n "visit_site" }} {{ partial "arrow.html" . }}</a></dd></div>{{ end }}
+      </dl>
+      {{/* Figures still in brackets ("[—]") are placeholders: they stay hidden until a real number replaces them. */}}
+      {{ $results := slice }}{{ range .Params.results }}{{ if not (in .value "[") }}{{ $results = $results | append . }}{{ end }}{{ end }}
+      {{ with $results }}
+      <div class="section-head" style="margin:0"><div class="section-head__top">{{ partial "icon.html" "chart" }}<span class="label">{{ i18n "results" }}</span></div></div>
+      <div class="results">
+        {{ range $i, $r := . }}<div class="result reveal" data-delay="{{ $i }}"><span class="result__value num" data-count>{{ $r.value }}</span><span class="result__note">{{ $r.note }}</span></div>{{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+  <p style="margin-top: clamp(40px, 5vw, 64px)"><a class="link" href="{{ .Parent.RelPermalink }}">{{ i18n "back_to_projects" }} {{ partial "arrow.html" . }}</a></p>
+</section>
+
+{{ partial "cta.html" . }}
+{{ end }}

@@ -1,0 +1,32 @@
+<header class="header{{ if or .Params.hero (and (eq .Section "projects") .IsPage) }} header--over-dark{{ end }}" id="header">
+  <div class="container">
+    <nav class="nav" aria-label="Main">
+      {{ partial "wordmark.html" . }}
+      <ul class="nav__links">
+        {{ $cur := . }}
+        {{ range .Site.Menus.main }}
+        <li><a href="{{ .URL }}"{{ if or ($cur.IsMenuCurrent "main" .) ($cur.HasMenuCurrent "main" .) }} aria-current="page"{{ end }}>{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+      <div class="nav__end">
+        <a class="button button--orange button--sm nav__cta" href="{{ partial "book-url.html" . }}">{{ i18n "book_short" }}</a>
+        <button class="nav__burger" type="button" aria-label="{{ i18n "menu" }}" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+      </div>
+    </nav>
+  </div>
+</header>
+<div class="menu" id="menu" aria-label="{{ i18n "menu" }}">
+  <div class="menu__top">
+    {{ partial "wordmark.html" . }}
+    <button class="nav__burger menu__close" type="button" aria-label="{{ i18n "close" }}" aria-expanded="true"><span style="transform: translateY(3.5px) rotate(45deg)"></span><span style="transform: translateY(-3.5px) rotate(-45deg)"></span></button>
+  </div>
+  <ul class="menu__links">
+    {{ $icons := dict "/services" "list" "/projects" "star" "/offers" "layers" "/blog" "book" "/about" "user" }}
+    {{ range .Site.Menus.main }}<li><a href="{{ .URL }}">{{ .Name }}{{ partial "icon.html" (index $icons .PageRef | default "flag") }}</a></li>{{ end }}
+    <li><a href="{{ "/contact/" | relLangURL }}">{{ i18n "contact_us" }}{{ partial "icon.html" "mail" }}</a></li>
+  </ul>
+  <div class="menu__foot">
+    {{ partial "lang-switch.html" . }}
+    <a class="button button--orange button--sm" href="{{ partial "book-url.html" . }}">{{ i18n "book_short" }}</a>
+  </div>
+</div>

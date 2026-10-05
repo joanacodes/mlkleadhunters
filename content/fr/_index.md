@@ -1,0 +1,33 @@
+---
+title: "MLK Leadhunters"
+hero: true
+hero_label: "Cold email B2B, clé en main"
+hero_title: "Des rendez-vous qualifiés, <span class='hl'>sans démarcher personne.</span>"
+hero_lead: "Nous construisons l’infrastructure d’envoi, écrivons les emails, pilotons les campagnes et vous transmettons les réponses qui comptent. <strong>Vous parlez à des gens qui veulent déjà vous parler.</strong>"
+stats:
+  - value: "25 k"
+    note: "<span class='hl--o'>emails</span> délivrés chaque mois"
+  - value: "31 %"
+    note: "de <span class='hl--o'>taux de réponse</span> moyen"
+  - value: "94 %"
+    note: "de placement en <span class='hl--o'>boîte de réception</span>"
+services_title: "Tout ce qu’une campagne exige, <span class='hl'>géré de bout en bout.</span>"
+services_lead: "Pas de mailing de masse, aucun risque pour votre réputation. Des listes courtes et précises, des emails écrits à la main et validés par vous, et seulement les réponses qui valent votre temps dans votre boîte."
+how_title: "D’une liste de noms à <span class='hl--o'>un agenda rempli.</span>"
+how_lead: "Trois étapes, un seul interlocuteur. La plupart de nos clients reçoivent leurs premières réponses positives dans les trois semaines qui suivent le lancement."
+steps:
+  - title: "Ciblage"
+    icon: "target"
+    body: "Nous définissons l’offre à promouvoir et construisons une liste vérifiée des entreprises et des personnes les plus susceptibles d’en avoir besoin."
+  - title: "Rédaction et envoi"
+    icon: "send"
+    body: "Trois emails courts par séquence, dans votre ton, envoyés depuis des domaines dédiés pour que le vôtre ne soit jamais exposé."
+  - title: "Les réponses, chez vous"
+    icon: "calendar"
+    body: "Nous lisons chaque réponse et vous transmettons les positives le jour même, avec le fil et ce que nous savons. Vous répondez, vous réservez, vous rencontrez."
+offers_title: "<span class='hl'>Trois façons</span> de travailler avec nous."
+offers_lead: "L’infrastructure seule, toute la prospection, ou seulement les leads. Pas de prix sur cette page : chaque périmètre est chiffré après un appel de quinze minutes."
+projects_title: "Des campagnes qui ont fait <span class='hl--o'>sonner le téléphone.</span>"
+projects_lead: "Deux clients, deux marchés très différents, la même méthode."
+blog_title: "Ce qu’on nous demande sur <span class='hl'>le cold email.</span>"
+---

@@ -1,0 +1,18 @@
+{{ $offers := .Params.offers }}
+<div class="offers">
+  {{ range $i, $o := $offers }}
+  <div class="offer {{ if $o.dark }}offer--dark{{ end }} reveal" data-delay="{{ $i }}">
+    <div class="offer__top"><span class="section-head__top">{{ with $o.icon }}{{ partial "icon.html" . }}{{ end }}<span class="label label--plain">{{ $o.kicker }}</span></span>{{ if $o.tag }}<span class="tag">{{ $o.tag }}</span>{{ end }}</div>
+    <h3 class="offer__name">{{ $o.name }}</h3>
+    <p class="offer__lead">{{ $o.lead | safeHTML }}</p>
+    <ul class="offer__list">
+      {{ range $o.includes }}<li>{{ . }}</li>{{ end }}
+      {{ range $o.plus }}<li class="is-plus">{{ . }}</li>{{ end }}
+    </ul>
+    <div class="offer__foot">
+      <a class="button {{ if not $o.dark }}button--inverse{{ end }}" href="{{ partial "book-url.html" $ }}">{{ $o.cta }}</a>
+      {{ with $o.note }}<span class="offer__note">{{ . }}</span>{{ end }}
+    </div>
+  </div>
+  {{ end }}
+</div>

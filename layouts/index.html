@@ -1,0 +1,92 @@
+{{ define "main" }}
+{{ $p := .Params }}
+<section class="glass glass--hero on-dark" aria-label="Intro">
+  <div class="glass__photo" style="background-image:url('{{ "images/hero-glass.jpg" | relURL }}')"></div>
+  <div class="glass__tint"></div>
+  <div class="glass__day"></div>
+  <div class="glass__grain"></div>
+  <div class="glass__line"></div>
+  <div class="glass__content container hero">
+    <div class="hero__body">
+      <span class="label">{{ $p.hero_label }}</span>
+      <h1 class="display">{{ $p.hero_title | safeHTML }}</h1>
+      <p class="lead">{{ $p.hero_lead | safeHTML }}</p>
+      <div class="hero__actions">
+        <a class="button" href="{{ partial "book-url.html" . }}">{{ i18n "book_call" }}</a>
+        <a class="button button--ghost" href="#how">{{ i18n "see_how" }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <div class="stats">
+    {{ range $i, $s := $p.stats }}
+    <div class="stat reveal" data-delay="{{ $i }}"><span class="stat__value num" data-count>{{ $s.value }}</span><span class="stat__note">{{ $s.note | safeHTML }}</span></div>
+    {{ end }}
+  </div>
+</section>
+
+<section class="section container" id="services">
+  <div class="section-head section-head--split">
+    <div style="display:grid;gap:20px"><div class="section-head__top">{{ partial "icon.html" "list" }}<span class="label">{{ i18n "what_we_do" }}</span></div><h2 class="title">{{ $p.services_title | safeHTML }}</h2></div>
+    <p class="lead">{{ $p.services_lead | safeHTML }}</p>
+  </div>
+  <div class="grid grid--4">
+    {{ with .Site.GetPage "services" }}{{ range $i, $s := .Pages.ByWeight }}
+    <a class="card reveal" data-delay="{{ $i }}" href="{{ $s.RelPermalink }}">
+      <span class="card__top">{{ partial "icon.html" ($s.Params.icon | default "list") }}<span class="card__index">0{{ add $i 1 }}</span></span>
+      <span class="card__title">{{ $s.Title }}</span>
+      <span class="card__body">{{ $s.Params.summary }}</span>
+      <span class="card__foot"><span class="link">{{ i18n "read_more" }} {{ partial "arrow.html" . }}</span></span>
+    </a>
+    {{ end }}{{ end }}
+  </div>
+</section>
+
+<section class="section section--line container" id="how">
+  <div class="section-head section-head--split">
+    <div style="display:grid;gap:20px"><div class="section-head__top">{{ partial "icon.html" "bolt" }}<span class="label">{{ i18n "how_it_works" }}</span></div><h2 class="title">{{ $p.how_title | safeHTML }}</h2></div>
+    <p class="lead">{{ $p.how_lead | safeHTML }}</p>
+  </div>
+  <div class="steps">
+    {{ range $i, $s := $p.steps }}
+    <div class="step reveal" data-delay="{{ $i }}"><span class="step__top">{{ with $s.icon }}{{ partial "icon.html" . }}{{ end }}<span class="step__n">0{{ add $i 1 }}</span></span><div><div class="step__title">{{ $s.title }}</div><div class="step__body">{{ $s.body }}</div></div></div>
+    {{ end }}
+  </div>
+  {{ partial "rule.html" . }}
+</section>
+
+<section class="section section--line container" id="offers">
+  <div class="section-head section-head--split">
+    <div style="display:grid;gap:20px"><div class="section-head__top">{{ partial "icon.html" "layers" }}<span class="label">{{ i18n "offers" }}</span></div><h2 class="title">{{ $p.offers_title | safeHTML }}</h2></div>
+    <p class="lead">{{ $p.offers_lead | safeHTML }}</p>
+  </div>
+  {{ with .Site.GetPage "offers" }}{{ partial "offers.html" . }}{{ end }}
+</section>
+
+<section class="section section--line container" id="projects">
+  <div class="section-head section-head--split">
+    <div style="display:grid;gap:20px"><div class="section-head__top">{{ partial "icon.html" "star" }}<span class="label">{{ i18n "projects" }}</span></div><h2 class="title">{{ $p.projects_title | safeHTML }}</h2></div>
+    <p class="lead">{{ $p.projects_lead | safeHTML }}</p>
+  </div>
+  <div class="projects-grid">
+    {{ with .Site.GetPage "projects" }}{{ range .Pages.ByWeight }}<div class="reveal">{{ partial "project-card.html" . }}</div>{{ end }}{{ end }}
+  </div>
+</section>
+
+<section class="section section--line container" id="blog">
+  <div class="section-head section-head--split">
+    <div style="display:grid;gap:20px"><div class="section-head__top">{{ partial "icon.html" "book" }}<span class="label">{{ i18n "latest_posts" }}</span></div><h2 class="title">{{ $p.blog_title | safeHTML }}</h2></div>
+    {{ with .Site.GetPage "blog" }}<a class="link reveal" href="{{ .RelPermalink }}">{{ i18n "all_posts" }} {{ partial "arrow.html" . }}</a>{{ end }}
+  </div>
+  <div class="posts">
+    {{ with .Site.GetPage "blog" }}{{ range first 3 .Pages.ByDate.Reverse }}{{ partial "post-card.html" . }}{{ end }}{{ end }}
+  </div>
+</section>
+
+{{/* Anchors of the previous one-page site: #contact was its booking form, #pricing and #work its offers and projects. */}}
+<script>(function(){var m={contact:'{{ partial "book-url.html" . }}',pricing:'#offers',work:'#projects'},k=location.hash.slice(1);if(Object.prototype.hasOwnProperty.call(m,k)){location.replace(m[k]);}})();</script>
+
+{{ partial "cta.html" . }}
+{{ end }}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}" class="no-js">
+<head>
+{{ partial "head.html" . }}
+<script>(function(){try{if(sessionStorage.getItem('mlk-preloaded')||window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('no-preload');}}catch(e){}})();</script>
+</head>
+<body class="{{ if .IsHome }}is-home{{ end }}{{ if .Params.hero }} has-hero{{ end }}{{ if eq .Section "projects" }}{{ if .IsPage }} has-hero{{ end }}{{ end }}">
+{{ partial "preloader.html" . }}
+{{ partial "header.html" . }}
+<main id="main" class="page">
+{{ block "main" . }}{{ end }}
+</main>
+{{ partial "footer.html" . }}
+{{ partial "dock.html" . }}
+{{ partial "langprompt.html" . }}
+{{ $js := resources.Get "js/main.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        {{ partial "wordmark.html" . }}
+        <p>{{ .Site.Params.tagline }}</p>
+        <span class="status">{{ i18n "status" }}</span>
+      </div>
+      <div class="footer__col">
+        <span class="label label--plain">{{ i18n "what_we_do" }}</span>
+        {{ with .Site.GetPage "services" }}{{ range .Pages.ByWeight }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}{{ end }}
+      </div>
+      <div class="footer__col">
+        <span class="label label--plain">MLK</span>
+        {{ with .Site.GetPage "projects" }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
+        {{ with .Site.GetPage "offers" }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
+        {{ with .Site.GetPage "about" }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
+        {{ with .Site.GetPage "blog" }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
+      </div>
+      <div class="footer__col">
+        <span class="label label--plain">{{ i18n "contact_us" }}</span>
+        <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a>
+        {{ with .Site.GetPage "contact" }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
+        {{ with .Site.GetPage "legal" }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
+      </div>
+    </div>
+    <div class="footer__base">
+      <span>© {{ now.Year }} MLK Leadhunters. {{ i18n "rights" }}</span>
+      {{ partial "lang-switch.html" . }}
+    </div>
+  </div>
+</footer>
