@@ -16,11 +16,17 @@
   }
 
   function init() {
-    // Preloader: once per session, 2 s
+    // Preloader: once per session, about 3 s. Driven by its own CSS animation (which can start late on a slow
+    // first paint), so it is never cut short; the timer is only a safety net.
     var pre = document.getElementById('preloader');
     if (pre) {
       if (session.get('mlk-preloaded') || reduce) { pre.classList.add('is-done'); }
-      else { session.set('mlk-preloaded', '1'); setTimeout(function () { pre.classList.add('is-done'); }, 2100); }
+      else {
+        session.set('mlk-preloaded', '1');
+        var preDone = function () { pre.classList.add('is-done'); };
+        pre.addEventListener('animationend', function (e) { if (e.animationName === 'pl-out') { preDone(); } });
+        setTimeout(preDone, 6000);
+      }
     }
 
     // Page entrance
@@ -33,9 +39,14 @@
     // Hero entrance
     var glass = document.querySelector('.glass--hero');
     if (glass) {
-      var delay = (pre && !pre.classList.contains('is-done')) ? 1800 : 80;
       var ready = function () { glass.classList.add('is-ready'); };
-      if (reduce) { ready(); } else { setTimeout(ready, delay); }
+      if (reduce) { ready(); }
+      else if (pre && !pre.classList.contains('is-done')) {
+        // enter as the preloader starts to fade
+        pre.addEventListener('animationstart', function (e) { if (e.animationName === 'pl-out') { ready(); } });
+        setTimeout(ready, 6000);
+      }
+      else { setTimeout(ready, 80); }
     }
 
     // Header glass state + bottom dock, driven by scroll (listener registered once, elements looked up each time)

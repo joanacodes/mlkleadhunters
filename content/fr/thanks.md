@@ -1,4 +1,7 @@
 ---
+robots: "noindex, follow"
+sitemap:
+  disable: true
 title: "Merci"
 kicker: "Message reçu"
 icon: "mail"

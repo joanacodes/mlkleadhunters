@@ -90,6 +90,17 @@ disableKinds = ["taxonomy", "term"]
       pageRef = "/about"
       weight = 50
 
+[module]
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+  [[module.mounts]]
+    source = "static/images"
+    target = "assets/images"
+
 [related]
   includeNewer = true
   threshold = 40

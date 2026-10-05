@@ -97,3 +97,7 @@ other = "avis"
 other = "«\u00a0"
 [quote_close]
 other = "\u00a0»"
+
+# Breadcrumbs (search results)
+[home]
+other = "Accueil"

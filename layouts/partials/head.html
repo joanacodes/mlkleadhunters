@@ -1,21 +1,119 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-{{ $title := .Title }}{{ if .IsHome }}{{ $title = printf "%s — %s" .Site.Title .Site.Params.tagline }}{{ else }}{{ $title = printf "%s — %s" .Title .Site.Title }}{{ end }}
+{{- /* Title and description: seo_title and description in the front matter, with fallbacks */ -}}
+{{- $title := "" -}}
+{{- if .IsHome -}}
+  {{- $title = .Params.seo_title | default (printf "%s — %s" site.Title site.Params.tagline) -}}
+{{- else -}}
+  {{- $title = printf "%s — %s" (.Params.seo_title | default .Title) site.Title -}}
+{{- end -}}
+{{- $desc := .Description -}}
+{{- if not $desc }}{{ $desc = .Params.summary }}{{ end -}}
+{{- if not $desc }}{{ with .Params.lead }}{{ $desc = . | plainify | htmlUnescape | truncate 160 }}{{ end }}{{ end -}}
+{{- if not $desc }}{{ $desc = site.Params.description }}{{ end -}}
+{{- $lang := site.Language.LanguageCode | default site.Language.Lang -}}
+{{- /* Share image: the page's own photo (or the hero photo), cropped to 1200×630 */ -}}
+{{- $img := resources.Get (.Params.image | default "images/hero-glass.jpg") | default (resources.Get "images/hero-glass.jpg") -}}
+{{- $og := $img.Fill "1200x630 Center q80" -}}
+{{- $isPost := and .IsPage (eq .Section "blog") }}
 <title>{{ $title }}</title>
-<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+<meta name="description" content="{{ $desc }}">
+<meta name="robots" content="{{ .Params.robots | default "index, follow, max-image-preview:large" }}">
 <link rel="canonical" href="{{ .Permalink }}">
-{{ range .Translations }}<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">
-{{ end }}<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">
+{{ range .AllTranslations }}<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">
+{{ if eq .Language.Lang site.Sites.Default.Language.Lang }}<link rel="alternate" hreflang="x-default" href="{{ .Permalink }}">
+{{ end }}{{ end -}}
+<meta property="og:site_name" content="{{ site.Title }}">
+<meta property="og:locale" content="{{ replace $lang "-" "_" }}">
+{{ range .Translations }}<meta property="og:locale:alternate" content="{{ replace (.Language.LanguageCode | default .Language.Lang) "-" "_" }}">
+{{ end -}}
+<meta property="og:type" content="{{ if $isPost }}article{{ else }}website{{ end }}">
 <meta property="og:title" content="{{ $title }}">
-<meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+<meta property="og:description" content="{{ $desc }}">
 <meta property="og:url" content="{{ .Permalink }}">
-<meta property="og:image" content="{{ "images/hero-glass.jpg" | absURL }}">
+<meta property="og:image" content="{{ $og.Permalink }}">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="{{ $og.Width }}">
+<meta property="og:image:height" content="{{ $og.Height }}">
+<meta property="og:image:alt" content="{{ $title }}">
+{{ if $isPost }}<meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+<meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
+{{ range .Params.tags }}<meta property="article:tag" content="{{ . }}">
+{{ end }}{{ end -}}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ $title }}">
+<meta name="twitter:description" content="{{ $desc }}">
+<meta name="twitter:image" content="{{ $og.Permalink }}">
+<meta name="twitter:image:alt" content="{{ $title }}">
 <meta name="theme-color" content="#0D1017">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230D1017'/%3E%3Crect x='11' y='11' width='10' height='10' fill='%232B4DFF'/%3E%3C/svg%3E">
+<link rel="icon" href="{{ "favicon.ico" | relURL }}" sizes="48x48">
+<link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
+<link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | relURL }}">
+<link rel="manifest" href="{{ "site.webmanifest" | relURL }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap">
 {{ $css := resources.Get "css/main.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
 {{ with .OutputFormats.Get "rss" }}<link rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" href="{{ .Permalink }}">{{ end }}
+{{- /* Structured data (schema.org) for search engines */ -}}
+{{- $home := site.Home -}}
+{{- $orgID := printf "%s#organization" ("/" | absURL) -}}
+{{- $siteID := printf "%s#website" $home.Permalink -}}
+{{- $pageID := printf "%s#webpage" .Permalink -}}
+{{- $image := dict "@type" "ImageObject" "url" $og.Permalink "width" $og.Width "height" $og.Height -}}
+{{- $org := dict
+  "@type" "Organization"
+  "@id" $orgID
+  "name" site.Title
+  "url" ("/" | absURL)
+  "logo" (dict "@type" "ImageObject" "url" ("icon-512.png" | absURL) "width" 512 "height" 512)
+  "email" site.Params.emailMain
+  "description" site.Params.description
+  "areaServed" (slice "United Kingdom" "France")
+  "parentOrganization" (dict "@type" "Organization" "name" "MLK Web Studio")
+  "contactPoint" (slice (dict "@type" "ContactPoint" "contactType" "sales" "email" (site.Params.formEmail | default site.Params.email) "availableLanguage" (slice "English" "French")))
+-}}
+{{- $website := dict "@type" "WebSite" "@id" $siteID "url" $home.Permalink "name" site.Title "description" site.Params.description "inLanguage" $lang "publisher" (dict "@id" $orgID) -}}
+{{- $pageType := "WebPage" -}}
+{{- if eq .Layout "contact" }}{{ $pageType = "ContactPage" }}{{ else if and (not .IsHome) .IsSection }}{{ $pageType = "CollectionPage" }}{{ end -}}
+{{- with .File }}{{ if eq .ContentBaseName "about" }}{{ $pageType = "AboutPage" }}{{ end }}{{ end -}}
+{{- $webpage := dict "@type" $pageType "@id" $pageID "url" .Permalink "name" $title "description" $desc "inLanguage" $lang "isPartOf" (dict "@id" $siteID) "primaryImageOfPage" $image -}}
+{{- $graph := slice $org $website -}}
+{{- if .IsHome -}}
+  {{- $webpage = merge $webpage (dict "about" (dict "@id" $orgID)) -}}
+{{- else -}}
+  {{- $crumbs := slice -}}
+  {{- range $i, $a := .Ancestors.Reverse -}}
+    {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" (add $i 1) "name" (cond $a.IsHome (i18n "home") $a.Title) "item" $a.Permalink) -}}
+  {{- end -}}
+  {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" (add (len $crumbs) 1) "name" .Title "item" .Permalink) -}}
+  {{- $breadcrumb := dict "@type" "BreadcrumbList" "@id" (printf "%s#breadcrumb" .Permalink) "itemListElement" $crumbs -}}
+  {{- $webpage = merge $webpage (dict "breadcrumb" (dict "@id" (printf "%s#breadcrumb" .Permalink))) -}}
+  {{- $graph = $graph | append $breadcrumb -}}
+{{- end -}}
+{{- $graph = $graph | append $webpage -}}
+{{- if $isPost -}}
+  {{- $graph = $graph | append (dict
+    "@type" "BlogPosting"
+    "@id" (printf "%s#article" .Permalink)
+    "headline" .Title
+    "description" $desc
+    "datePublished" (.Date.Format "2006-01-02T15:04:05Z07:00")
+    "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")
+    "inLanguage" $lang
+    "image" $image
+    "author" (dict "@type" "Organization" "@id" $orgID "name" site.Title "url" ("/" | absURL))
+    "publisher" (dict "@id" $orgID)
+    "mainEntityOfPage" (dict "@id" $pageID)
+    "isPartOf" (dict "@id" $siteID)
+    "keywords" (delimit (.Params.tags | default slice) ", ")
+  ) -}}
+{{- else if and .IsPage (eq .Section "services") -}}
+  {{- $graph = $graph | append (dict "@type" "Service" "@id" (printf "%s#service" .Permalink) "name" .Title "serviceType" .Title "description" $desc "url" .Permalink "image" $image "provider" (dict "@id" $orgID) "areaServed" (slice "United Kingdom" "France")) -}}
+{{- else if and .IsPage (eq .Section "projects") -}}
+  {{- $about := dict "@type" "Organization" "name" (.Params.client | default .Title) -}}
+  {{- with .Params.website }}{{ $about = merge $about (dict "url" .) }}{{ end -}}
+  {{- $graph = $graph | append (dict "@type" "Article" "@id" (printf "%s#article" .Permalink) "headline" (.Params.seo_title | default .Title) "description" $desc "inLanguage" $lang "image" $image "author" (dict "@id" $orgID) "publisher" (dict "@id" $orgID) "mainEntityOfPage" (dict "@id" $pageID) "about" $about) -}}
+{{- end }}
+<script type="application/ld+json">{{ dict "@context" "https://schema.org" "@graph" $graph | jsonify | safeJS }}</script>

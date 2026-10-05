@@ -1,4 +1,7 @@
 ---
+robots: "noindex, follow"
+sitemap:
+  disable: true
 title: "Thank you"
 kicker: "Message received"
 icon: "mail"

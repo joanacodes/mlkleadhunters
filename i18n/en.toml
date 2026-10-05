@@ -97,3 +97,7 @@ other = "review"
 other = "“"
 [quote_close]
 other = "”"
+
+# Breadcrumbs (search results)
+[home]
+other = "Home"
