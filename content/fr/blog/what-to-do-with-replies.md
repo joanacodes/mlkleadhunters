@@ -1,5 +1,6 @@
 ---
 title: "Que faire des réponses : vitesse, qualification et réservation"
+seo_title: "Que faire des réponses à un cold email"
 date: 2026-10-04
 description: "La campagne se gagne ou se perd après la réponse. Répondre dans l’heure, poser deux questions, réserver le rendez-vous, et traiter chaque « non » comme une donnée."
 tags: ["réponses"]

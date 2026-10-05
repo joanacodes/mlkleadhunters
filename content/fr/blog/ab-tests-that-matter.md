@@ -1,7 +1,7 @@
 ---
 title: "Les tests A/B qui comptent vraiment en cold email"
 date: 2026-10-01
-description: "La plupart des tests mesurent du bruit. Les quelques-uns qui font bouger les résultats : la première ligne, la question, la longueur, l’heure d’envoi et le nombre de relances."
+description: "La plupart des tests mesurent du bruit. Ceux qui comptent : la première ligne, la question, la longueur, l’heure d’envoi et le nombre de relances."
 tags: ["rédaction", "chiffres"]
 ---
 ## Pourquoi la plupart des tests sont du bruit

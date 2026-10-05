@@ -350,6 +350,7 @@ a.card:hover .icon { border-color: var(--accent); }
 .hl { color: var(--accent); }
 .hl--o { color: var(--orange); }
 .on-dark .hl, .glass .hl, .offer--dark .hl { color: var(--accent); }
+.glass .hl { text-shadow: 0 0 1px rgba(13,16,23,.35), 0 2px 22px rgba(13,16,23,.55); }
 .prose strong { color: var(--accent); font-weight: 600; }
 .prose mark { background: none; color: var(--orange); font-weight: 500; }
 .prose h2 mark, .prose h3 mark { font-weight: inherit; }
@@ -435,7 +436,7 @@ a.card:hover .icon { border-color: var(--accent); }
 /* ---------- Preloader: 1.3 s, once per session ---------- */
 .preloader { position: fixed; inset: 0; z-index: 60; display: flex; align-items: center; justify-content: center; background: var(--graphite); color: var(--ice); animation: pl-out .25s var(--ease) 2.75s forwards; }
 .preloader__mark { display: inline-flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 600; letter-spacing: .24em; text-transform: uppercase; }
-.preloader__icons { position: relative; width: 40px; height: 40px; }
+.preloader__icons { position: relative; width: 40px; height: 40px; animation: pl-collapse .35s var(--ease) 1.4s forwards; }
 .preloader__icons .icon { position: absolute; inset: 0; color: var(--orange); border-color: rgba(239,87,29,.5); opacity: 0; transform: scale(.9); animation: pl-icon .45s var(--ease) forwards; }
 .preloader__icons .icon:nth-child(1) { animation-delay: .05s; }
 .preloader__icons .icon:nth-child(2) { animation-delay: .5s; }
@@ -445,6 +446,7 @@ a.card:hover .icon { border-color: var(--accent); }
 @keyframes pl-icon { 0% { opacity: 0; transform: scale(.9); } 25% { opacity: 1; transform: none; } 75% { opacity: 1; transform: none; } 100% { opacity: 0; transform: scale(1.04); } }
 @keyframes pl-slash { to { transform: rotate(90deg); } }
 @keyframes pl-word { to { opacity: 1; transform: none; } }
+@keyframes pl-collapse { to { width: 0; margin-right: -12px; } }
 @keyframes pl-out { to { opacity: 0; visibility: hidden; } }
 .no-preload .preloader, .preloader.is-done { display: none; }
 @media (prefers-reduced-motion: reduce) { .preloader { display: none; } .dock, .langprompt, .page, .header { transition: none !important; } }

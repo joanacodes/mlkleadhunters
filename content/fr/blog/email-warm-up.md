@@ -1,5 +1,6 @@
 ---
 title: "La chauffe d’une boîte email : ce que c’est et combien de temps ça prend"
+seo_title: "Chauffer une boîte email : durée et méthode"
 date: 2026-09-25
 description: "Une boîte neuve n’a aucune réputation. La chauffe en construit une avant le premier cold email : ce qui se passe, la durée, et les signes que ça a marché."
 tags: ["infrastructure"]

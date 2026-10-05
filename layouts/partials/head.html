@@ -55,13 +55,18 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap">
 {{ $css := resources.Get "css/main.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
-{{ with .OutputFormats.Get "rss" }}<link rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" href="{{ .Permalink }}">{{ end }}
+{{ with site.Home.OutputFormats.Get "rss" }}<link rel="alternate" type="application/rss+xml" title="{{ site.Title }} — Blog" href="{{ .Permalink }}">{{ end }}
 {{- /* Structured data (schema.org) for search engines */ -}}
 {{- $home := site.Home -}}
 {{- $orgID := printf "%s#organization" ("/" | absURL) -}}
 {{- $siteID := printf "%s#website" $home.Permalink -}}
 {{- $pageID := printf "%s#webpage" .Permalink -}}
 {{- $image := dict "@type" "ImageObject" "url" $og.Permalink "width" $og.Width "height" $og.Height -}}
+{{- /* The same Organization node on every page, in both languages: one contact point per language */ -}}
+{{- $contacts := slice -}}
+{{- range site.Sites -}}
+  {{- $contacts = $contacts | append (dict "@type" "ContactPoint" "contactType" "sales" "email" (.Params.formEmail | default .Params.email) "availableLanguage" (.Language.LanguageCode | default .Language.Lang)) -}}
+{{- end -}}
 {{- $org := dict
   "@type" "Organization"
   "@id" $orgID
@@ -69,10 +74,10 @@
   "url" ("/" | absURL)
   "logo" (dict "@type" "ImageObject" "url" ("icon-512.png" | absURL) "width" 512 "height" 512)
   "email" site.Params.emailMain
-  "description" site.Params.description
+  "description" site.Sites.Default.Params.description
   "areaServed" (slice "United Kingdom" "France")
   "parentOrganization" (dict "@type" "Organization" "name" "MLK Web Studio")
-  "contactPoint" (slice (dict "@type" "ContactPoint" "contactType" "sales" "email" (site.Params.formEmail | default site.Params.email) "availableLanguage" (slice "English" "French")))
+  "contactPoint" $contacts
 -}}
 {{- $website := dict "@type" "WebSite" "@id" $siteID "url" $home.Permalink "name" site.Title "description" site.Params.description "inLanguage" $lang "publisher" (dict "@id" $orgID) -}}
 {{- $pageType := "WebPage" -}}

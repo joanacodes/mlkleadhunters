@@ -1,5 +1,6 @@
 ---
 title: "Building a cold email list: where leads come from and how to clean them"
+seo_title: "Building a cold email list and cleaning it"
 date: 2026-09-29
 description: "A precise, verified list is most of the result. Sources, segmentation, verification, enrichment and the suppression list that keeps you polite."
 tags: ["targeting"]

@@ -1,7 +1,8 @@
 ---
 title: "Le cold email est-il légal en France, dans l’UE et au Royaume-Uni ?"
+seo_title: "Légalité du cold email : France, UE, Royaume-Uni"
 date: 2026-09-05
-description: "En B2B, oui, sous conditions : un intérêt légitime, un destinataire professionnel, un message honnête et un désabonnement qui fonctionne. Information générale, pas un conseil juridique."
+description: "En B2B, oui, sous conditions : intérêt légitime, destinataire professionnel, message honnête, désabonnement simple. Information générale, pas un avis juridique."
 tags: ["juridique"]
 ---
 *Cet article est une information générale, pas un conseil juridique. Les règles évoluent et votre situation peut différer ; consultez un avocat avant une grande campagne.*

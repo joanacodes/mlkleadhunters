@@ -1,5 +1,6 @@
 ---
 title: "Construire une liste de cold email : d’où viennent les contacts et comment les nettoyer"
+seo_title: "Construire une liste de cold email propre"
 date: 2026-09-29
 description: "Une liste précise et vérifiée fait l’essentiel du résultat. Sources, segmentation, vérification, enrichissement et la liste d’exclusion qui vous garde poli."
 tags: ["ciblage"]
