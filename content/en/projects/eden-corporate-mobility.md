@@ -20,7 +20,6 @@ review:
   text: "Our clients are HR teams, office managers and relocation agencies who book housing for other people and never search for it themselves. Ads and listings kept reaching the wrong audience. The emails reached the right desks: short, polite, in our tone, and the positive replies arrived in our inbox with the context we needed to answer well. The first meetings were with exactly the companies we had in mind, and the sending setup is ours to keep."
   author: "Eden Corporate Mobility"
   role: "Management"
-  status: "draft written for the client to approve"
 ---
 ## The situation
 
@@ -33,5 +32,3 @@ We targeted companies of a size that relocates people regularly, and the roles i
 ## What came back
 
 The replies came from the right desks. Meetings were with HR and office managers who had a concrete need in the coming months, which is exactly the conversation Eden wanted to have.
-
-The figures in brackets above are being confirmed with Eden Corporate Mobility before publication.

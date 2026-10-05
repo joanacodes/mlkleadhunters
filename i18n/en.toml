@@ -89,3 +89,9 @@ other = "I accept to be contacted regarding my request."
 other = "You answer. We never write in your name."
 [rule_body]
 other = "We read and sort every reply, and the positive ones reach your inbox the same day with the thread and what we know about the company. <strong>The conversation with a prospect is yours</strong>: you write back from your own address, you book the meeting, you build the relationship. We make sure the right replies reach you fast and without noise."
+
+# Anchors (the part after # in links)
+[anchor_book]
+other = "book-a-call"
+[anchor_review]
+other = "review"

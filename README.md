@@ -10,7 +10,7 @@ The main Lead Hunters site, in the Lumière direction: graphite and ice, one blu
 
 1. Push this folder to the `mlkleadhunters` repository (branch `main`).
 2. Repository → Settings → Pages → Source: **GitHub Actions**. The workflow in `.github/workflows/hugo.yml` builds and publishes on every push.
-3. `static/CNAME` says `mlkleadhunters.com`: that is the site. At your registrar, redirect `mlkleadhunters.co.uk` → `https://mlkleadhunters.com/` (301) and `mlkleadhunters.fr` → `https://mlkleadhunters.com/fr/` (301). GitHub Pages serves one domain per repository, so the regional domains redirect to it; the English pages speak to the UK, the French pages to France.
+3. The domain is the one entered in Settings → Pages → **Custom domain** (with GitHub Actions, GitHub ignores the `static/CNAME` file, which is kept only as a reminder). The site is meant to live on `mlkleadhunters.com`. At your registrar, redirect `mlkleadhunters.co.uk` → `https://mlkleadhunters.com/` (301) and `mlkleadhunters.fr` → `https://mlkleadhunters.com/fr/` (301). GitHub Pages serves one domain per repository, so the regional domains redirect to it; the English pages speak to the UK, the French pages to France.
 
 ## Emails
 
@@ -31,6 +31,13 @@ Set in `hugo.toml`: English pages show `hello@mlkleadhunters.co.uk`, French page
 - **Language prompt**: compares the browser language with the page language and offers the other version once; the choice (or a dismissal) is remembered in localStorage.
 - **Page transition**: a 180 ms fade on internal links; nothing on external links, mailto or modifier clicks.
 
+## Links and anchors
+
+- **Book a call**: every booking button (header, menu, dock, hero, offers, blog, the closing band) goes to the form on the contact page: `/contact/#book-a-call`, `/fr/contact/#reserver-un-appel`. The anchor names are in `i18n/*.toml` (`anchor_book`); the link is built in `layouts/partials/book-url.html`. To use Calendly instead, put the full link in `bookingUrl` in `hugo.toml`.
+- **Contact / Write to us** links go to the top of the contact page.
+- **Project cards** open the project page on its review: `#review`, `#avis` (`anchor_review`). The full review is the second section of each project page.
+- **Old addresses** from the previous site: `/how-we-work.html` → the How it works section of the home page (`/#how`; its old `#targeting`, `#copywriting`, `#deliverability` and `#reporting` sections go to the matching service), see `static/how-we-work.html`; `/mentions-legales.html` → `/legal/` (alias in `content/en/legal.md`).
+
 ## Structure
 
 - `content/en/…` and `content/fr/…` — same file names on both sides; that is how the FR/EN switch links the two versions.
@@ -42,9 +49,7 @@ Set in `hugo.toml`: English pages show `hello@mlkleadhunters.co.uk`, French page
 
 ## Before going live
 
-- [ ] **Project figures**: replace the `[—]` values in `content/*/projects/pilotech.md` and `eden-corporate-mobility.md` with the real numbers, and delete the sentence "The figures in brackets…".
-- [ ] **Reviews**: the two quotes are drafts written to be confirmed by Pilotech and Eden Corporate Mobility. Replace the text, the author and the role with what the clients approve, then remove the `status:` line.
-- [ ] **Booking**: set `bookingUrl` in `hugo.toml` to your Calendly / YouCanBookMe link (today every "Book a call" button goes to /contact/).
+- [ ] **Project figures**: replace the `[—]` values in `content/*/projects/pilotech.md` and `eden-corporate-mobility.md` with the real numbers. Until then the Results block is hidden: any figure still in brackets is left off the page.
 - [ ] **Form**: the contact form posts to formsubmit.co with a table template, no captcha page (honeypot only), a required consent checkbox, and redirects to `/thanks/` (or `/fr/thanks/`). The first submission from each language sends an activation email to that language's address (hello@mlkleadhunters.co.uk / .fr); click it once. Or swap the `action` in `layouts/_default/contact.html` for Formspree or any other endpoint.
 - [ ] **Legal notice**: complete the company name, legal form, registration number and address in `content/*/legal.md`.
 - [ ] **Stats on the home page** (25 k / 31 % / 94 %) are the ones from the current site: confirm they still hold, in `content/*/_index.md`.

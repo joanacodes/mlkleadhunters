@@ -20,7 +20,6 @@ review:
   text: "Our customers usually find us on Google, and our reviews do the talking. For business clients we had never prospected at all. MLK built the sending setup, wrote the emails in our words and sent us only the replies worth our time. Within the first weeks, restaurant and shop owners were calling the direct line in the signature to ask for a visit. We never wrote a message ourselves, and every reply we did get, we answered from our own inbox, which is exactly how we wanted it."
   author: "Pilotech, Paris"
   role: "Management"
-  status: "draft written for the client to approve"
 ---
 ## The situation
 
@@ -33,5 +32,3 @@ We built the sending infrastructure first: dedicated domains, warmed mailboxes, 
 ## What came back
 
 Something we had not planned for: a share of prospects picked up the phone instead of replying. A real name and a direct line turned emails into calls. We adapted the sequence to make calling easier, and forwarded the written replies to Pilotech the same day so they could answer from their own inbox.
-
-The figures in brackets above are being confirmed with Pilotech before publication.

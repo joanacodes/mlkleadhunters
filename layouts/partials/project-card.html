@@ -1,4 +1,4 @@
-<a class="project-card" href="{{ .RelPermalink }}">
+<a class="project-card" href="{{ .RelPermalink }}{{ with .Params.review }}#{{ i18n "anchor_review" }}{{ end }}">
   <div class="glass__photo" style="background-image:url('{{ .Params.image | relURL }}')"></div>
   <div class="project-card__tint"></div>
   <div class="project-card__body">

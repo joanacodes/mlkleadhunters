@@ -13,7 +13,18 @@
   </div>
 </section>
 
-<section class="section container">
+{{ with .Params.review }}
+<section class="section container" id="{{ i18n "anchor_review" }}" aria-label="{{ i18n "review" }}">
+  <div class="section-head"><div class="section-head__top">{{ partial "icon.html" "chat" }}<span class="label">{{ i18n "review" }}</span></div></div>
+  <figure class="review review--full reveal">
+    {{ partial "stars.html" (int .rating) }}
+    <blockquote class="review__quote"><p class="review__text">« {{ .text }} »</p></blockquote>
+    <figcaption class="review__who"><strong>{{ .author }}</strong><span>{{ .role }}</span></figcaption>
+  </figure>
+</section>
+{{ end }}
+
+<section class="section{{ if .Params.review }} section--line{{ end }} container">
   <div class="feature" style="align-items:start">
     <div class="prose">{{ .Content }}</div>
     <div style="display:grid;gap:32px">
@@ -24,7 +35,9 @@
         {{ with .Params.scope }}<div class="fact"><dt>{{ i18n "service_used" }}</dt><dd>{{ . }}</dd></div>{{ end }}
         {{ with .Params.website }}<div class="fact"><dt>{{ i18n "website" }}</dt><dd><a class="link review__site" href="{{ . }}" target="_blank" rel="noopener">{{ i18n "visit_site" }} {{ partial "arrow.html" . }}</a></dd></div>{{ end }}
       </dl>
-      {{ with .Params.results }}
+      {{/* Figures still in brackets ("[—]") are placeholders: they stay hidden until a real number replaces them. */}}
+      {{ $results := slice }}{{ range .Params.results }}{{ if not (in .value "[") }}{{ $results = $results | append . }}{{ end }}{{ end }}
+      {{ with $results }}
       <div class="section-head" style="margin:0"><div class="section-head__top">{{ partial "icon.html" "chart" }}<span class="label">{{ i18n "results" }}</span></div></div>
       <div class="results">
         {{ range $i, $r := . }}<div class="result reveal" data-delay="{{ $i }}"><span class="result__value num" data-count>{{ $r.value }}</span><span class="result__note">{{ $r.note }}</span></div>{{ end }}
@@ -32,20 +45,8 @@
       {{ end }}
     </div>
   </div>
+  <p style="margin-top: clamp(40px, 5vw, 64px)"><a class="link" href="{{ .Parent.RelPermalink }}">{{ i18n "back_to_projects" }} {{ partial "arrow.html" . }}</a></p>
 </section>
-
-{{ with .Params.review }}
-<section class="section section--line container">
-  <div class="section-head"><div class="section-head__top">{{ partial "icon.html" "chat" }}<span class="label">{{ i18n "review" }}</span></div></div>
-  <div class="review reveal" data-review>
-    {{ partial "stars.html" (int .rating) }}
-    <blockquote class="review__quote" style="margin:0"><p class="review__text">« {{ .text }} »</p></blockquote>
-    <button class="review__more" type="button" aria-expanded="false" data-more="{{ i18n "read_review" }}" data-less="{{ i18n "close_review" }}">{{ i18n "read_review" }}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
-    <div class="review__who"><strong>{{ .author }}</strong><span>{{ .role }}</span></div>
-  </div>
-  <p style="margin-top:24px"><a class="link" href="{{ $.Parent.RelPermalink }}">{{ i18n "back_to_projects" }} {{ partial "arrow.html" . }}</a></p>
-</section>
-{{ end }}
 
 {{ partial "cta.html" . }}
 {{ end }}

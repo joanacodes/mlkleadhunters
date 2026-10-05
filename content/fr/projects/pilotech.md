@@ -20,7 +20,6 @@ review:
   text: "Nos clients nous trouvent d’habitude sur Google, et nos avis parlent pour nous. Les professionnels, nous ne les avions jamais prospectés. MLK a construit l’envoi, écrit les emails avec nos mots et ne nous a transmis que les réponses qui valaient notre temps. Dès les premières semaines, des restaurateurs et des commerçants appelaient la ligne directe de la signature pour demander une visite. Nous n’avons pas écrit un seul message, et chaque réponse reçue, nous y avons répondu depuis notre propre boîte, exactement comme nous le voulions."
   author: "Pilotech, Paris"
   role: "Direction"
-  status: "brouillon rédigé pour validation par le client"
 ---
 ## La situation
 
@@ -33,5 +32,3 @@ L’infrastructure d’abord : domaines dédiés, boîtes chauffées, authentifi
 ## Ce qui est revenu
 
 Quelque chose que nous n’avions pas prévu : une partie des prospects a décroché le téléphone au lieu de répondre. Un vrai nom et une ligne directe ont transformé des emails en appels. Nous avons adapté la séquence pour faciliter l’appel, et transmis les réponses écrites à Pilotech le jour même, pour qu’ils y répondent depuis leur propre boîte.
-
-Les chiffres entre crochets ci-dessus sont en cours de validation avec Pilotech avant publication.

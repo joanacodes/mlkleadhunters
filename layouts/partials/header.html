@@ -9,7 +9,7 @@
         {{ end }}
       </ul>
       <div class="nav__end">
-        <a class="button button--orange button--sm nav__cta" href="{{ .Site.Params.bookingUrl | relLangURL }}">{{ i18n "book_short" }}</a>
+        <a class="button button--orange button--sm nav__cta" href="{{ partial "book-url.html" . }}">{{ i18n "book_short" }}</a>
         <button class="nav__burger" type="button" aria-label="{{ i18n "menu" }}" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
       </div>
     </nav>
@@ -27,6 +27,6 @@
   </ul>
   <div class="menu__foot">
     {{ partial "lang-switch.html" . }}
-    <a class="button button--orange button--sm" href="{{ .Site.Params.bookingUrl | relLangURL }}">{{ i18n "book_short" }}</a>
+    <a class="button button--orange button--sm" href="{{ partial "book-url.html" . }}">{{ i18n "book_short" }}</a>
   </div>
 </div>

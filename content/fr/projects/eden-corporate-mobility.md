@@ -20,7 +20,6 @@ review:
   text: "Nos clients sont des équipes RH, des office managers et des agences de relocation qui réservent un logement pour d’autres et ne le cherchent jamais eux-mêmes. La publicité et les annonces touchaient le mauvais public. Les emails ont atteint les bons bureaux : courts, polis, dans notre ton, et les réponses positives arrivaient dans notre boîte avec le contexte qu’il fallait pour bien répondre. Les premiers rendez-vous étaient exactement avec les entreprises que nous visions, et l’infrastructure d’envoi nous reste."
   author: "Eden Corporate Mobility"
   role: "Direction"
-  status: "brouillon rédigé pour validation par le client"
 ---
 ## La situation
 
@@ -33,5 +32,3 @@ Nous avons ciblé des entreprises d’une taille qui déplace régulièrement de
 ## Ce qui est revenu
 
 Les réponses sont venues des bons bureaux. Les rendez-vous étaient avec des RH et des office managers ayant un besoin concret dans les mois suivants, exactement la conversation qu’Eden voulait avoir.
-
-Les chiffres entre crochets ci-dessus sont en cours de validation avec Eden Corporate Mobility avant publication.

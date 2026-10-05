@@ -7,7 +7,7 @@
     <div class="cta__inner">
       <h2 class="title reveal">{{ i18n "cta_title" | safeHTML }}</h2>
       <p class="lead reveal" data-delay="1">{{ i18n "cta_lead" }}</p>
-      <a class="button reveal" data-delay="2" href="{{ .Site.Params.bookingUrl | relLangURL }}">{{ i18n "book_call" }}</a>
+      <a class="button reveal" data-delay="2" href="{{ partial "book-url.html" . }}">{{ i18n "book_call" }}</a>
     </div>
   </div>
 </section>

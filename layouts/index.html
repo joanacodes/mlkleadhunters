@@ -12,7 +12,7 @@
       <h1 class="display">{{ $p.hero_title | safeHTML }}</h1>
       <p class="lead">{{ $p.hero_lead | safeHTML }}</p>
       <div class="hero__actions">
-        <a class="button" href="{{ .Site.Params.bookingUrl | relLangURL }}">{{ i18n "book_call" }}</a>
+        <a class="button" href="{{ partial "book-url.html" . }}">{{ i18n "book_call" }}</a>
         <a class="button button--ghost" href="#how">{{ i18n "see_how" }}</a>
       </div>
     </div>

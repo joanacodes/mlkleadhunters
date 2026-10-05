@@ -1,6 +1,7 @@
 ---
 title: "Legal notice"
 kicker: "Legal"
+aliases: ["/mentions-legales.html"]
 ---
 **Publisher:** MLK Web Studio — [company name, legal form, registration number and address to complete].
 

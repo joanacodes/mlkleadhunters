@@ -10,7 +10,7 @@
       {{ range $o.plus }}<li class="is-plus">{{ . }}</li>{{ end }}
     </ul>
     <div class="offer__foot">
-      <a class="button {{ if not $o.dark }}button--inverse{{ end }}" href="{{ $.Site.Params.bookingUrl | relLangURL }}">{{ $o.cta }}</a>
+      <a class="button {{ if not $o.dark }}button--inverse{{ end }}" href="{{ partial "book-url.html" $ }}">{{ $o.cta }}</a>
       {{ with $o.note }}<span class="offer__note">{{ . }}</span>{{ end }}
     </div>
   </div>

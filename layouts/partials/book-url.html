@@ -1,0 +1,6 @@
+{{- /* Where every "Book a call" button points: the form on the contact page, by its anchor. A full link (Calendly…) in bookingUrl is used as is. */ -}}
+{{- $url := site.Params.bookingUrl | default "/contact/" -}}
+{{- if not (strings.HasPrefix $url "http") -}}
+  {{- $url = printf "%s#%s" ($url | relLangURL) (i18n "anchor_book") -}}
+{{- end -}}
+{{- return $url -}}
