@@ -1,5 +1,7 @@
 ---
 title: "Replies and reporting"
+seo_title: "Cold email reply handling and reporting"
+description: "Every reply read and sorted the same day, positive ones forwarded with full context, and a one-page monthly report. You answer prospects in your own words."
 icon: "inbox"
 heading: "Replies and <span class='hl'>reporting</span>"
 weight: 4

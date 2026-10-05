@@ -1,7 +1,8 @@
 ---
 title: "N’envoyez jamais de cold emails depuis votre domaine principal"
+seo_title: "Jamais de cold email depuis votre domaine"
 date: 2026-09-09
-description: "Le cold email comporte toujours un risque pour la délivrabilité. Les domaines secondaires l’absorbent pour que la vraie boîte de votre entreprise n’en paie jamais le prix."
+description: "Le cold email comporte toujours un risque de délivrabilité. Des domaines secondaires l’absorbent : la vraie boîte de votre entreprise n’en paie jamais le prix."
 tags: ["infrastructure"]
 ---
 ## La règle

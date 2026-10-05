@@ -1,5 +1,6 @@
 ---
 title: "Comment écrire un cold email qui obtient des réponses"
+seo_title: "Écrire un cold email qui obtient des réponses"
 date: 2026-09-21
 description: "Une structure qui fonctionne : une première ligne précise, une offre, une question, moins de 120 mots, et deux relances qui ajoutent chacune une raison."
 tags: ["rédaction"]

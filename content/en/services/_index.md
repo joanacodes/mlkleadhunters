@@ -1,5 +1,7 @@
 ---
 title: "Services"
+seo_title: "B2B cold email services, end to end"
+description: "Lists, deliverability, copy and replies: the four links of a B2B cold email campaign. We run all four with one person accountable, or just the infrastructure."
 heading: "Four pieces, <span class='hl'>one chain.</span>"
 lead: "Four pieces that only work together. You can buy the infrastructure alone, or the whole chain."
 ---

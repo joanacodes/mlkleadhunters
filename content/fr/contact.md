@@ -1,5 +1,7 @@
 ---
 title: "Contact"
+seo_title: "Demander un appel découverte gratuit"
+description: "Parlez-nous de votre entreprise et des clients visés. Réponse sous 48 heures pour planifier un appel gratuit de 15 minutes, sans engagement ni newsletter."
 layout: contact
 icon: "phone"
 kicker: "Appel découverte"

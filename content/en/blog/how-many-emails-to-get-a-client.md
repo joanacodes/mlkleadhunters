@@ -1,5 +1,6 @@
 ---
 title: "How many cold emails does it take to get one client?"
+seo_title: "How many cold emails to win one client?"
 date: 2026-09-13
 description: "Realistic numbers for a precise B2B list: reply rates, positive replies, meetings and deals, and the levers that move each one."
 tags: ["numbers"]

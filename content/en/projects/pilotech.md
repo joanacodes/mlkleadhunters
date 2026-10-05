@@ -1,5 +1,7 @@
 ---
 title: "Pilotech"
+seo_title: "Pilotech: B2B cold email for air conditioning"
+description: "Pilotech, a Paris installer of invisible air conditioning, had never prospected businesses. How founder-signed cold emails got restaurants and shops calling."
 weight: 1
 client: "Pilotech"
 sector: "Air conditioning and ventilation, Paris"

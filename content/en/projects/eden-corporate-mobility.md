@@ -1,5 +1,7 @@
 ---
 title: "Eden Corporate Mobility"
+seo_title: "Eden Corporate Mobility: cold email to HR"
+description: "How cold email put Eden Corporate Mobility in front of the HR teams and office managers who book housing for staff on assignment, not the travellers themselves."
 weight: 2
 client: "Eden Corporate Mobility"
 sector: "Corporate housing and relocation"

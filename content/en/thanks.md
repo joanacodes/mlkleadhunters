@@ -1,5 +1,8 @@
 ---
+robots: "noindex, follow"
 title: "Thank you"
+seo_title: "Thank you, message received"
+description: "Your message has reached us. We will reply within 48 hours to plan your 15-minute call; meanwhile, the blog answers the usual cold email questions."
 kicker: "Message received"
 icon: "mail"
 heading: "Thank you, <span class='hl'>it’s on its way.</span>"

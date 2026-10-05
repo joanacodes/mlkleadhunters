@@ -1,5 +1,7 @@
 ---
 title: "Deliverability and infrastructure"
+seo_title: "Cold email deliverability and infrastructure"
+description: "Dedicated domains, mailboxes warmed for two to three weeks, SPF, DKIM and DMARC tested: your emails reach the inbox and your main domain is never exposed."
 icon: "server"
 heading: "<span class='hl'>Deliverability</span> and infrastructure"
 weight: 2

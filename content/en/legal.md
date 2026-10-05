@@ -1,5 +1,7 @@
 ---
 title: "Legal notice"
+seo_title: "Legal notice, hosting and personal data"
+description: "Legal notice for mlkleadhunters.com: the publisher MLK Web Studio, hosting on GitHub Pages, what happens to contact form data, and no analytics cookies."
 kicker: "Legal"
 aliases: ["/mentions-legales.html"]
 ---

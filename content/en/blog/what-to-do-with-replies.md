@@ -1,5 +1,6 @@
 ---
 title: "What to do with replies: speed, qualification and booking"
+seo_title: "What to do with cold email replies"
 date: 2026-10-04
 description: "The campaign is won or lost after the reply. Answer within the hour, ask two questions, book the meeting, and treat every 'no' as data."
 tags: ["replies"]

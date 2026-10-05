@@ -9,8 +9,8 @@ The main Lead Hunters site, in the Lumière direction: graphite and ice, one blu
 ## Deploy to GitHub Pages
 
 1. Push this folder to the `mlkleadhunters` repository (branch `main`).
-2. Repository → Settings → Pages → Source: **GitHub Actions**. The workflow in `.github/workflows/hugo.yml` builds and publishes on every push.
-3. The domain is the one entered in Settings → Pages → **Custom domain** (with GitHub Actions, GitHub ignores the `static/CNAME` file, which is kept only as a reminder). The site is meant to live on `mlkleadhunters.com`. At your registrar, redirect `mlkleadhunters.co.uk` → `https://mlkleadhunters.com/` (301, keeping the path, so old links such as `/how-we-work.html` still reach their redirect) and `mlkleadhunters.fr` → `https://mlkleadhunters.com/fr/` (301). GitHub Pages serves one domain per repository, so the regional domains redirect to it; the English pages speak to the UK, the French pages to France.
+2. Repository → Settings → Pages → Source: **GitHub Actions**. The workflow in `.github/workflows/hugo.yml` builds and publishes on every push to `main`. It always builds for `baseURL` in `hugo.toml` (`https://mlkleadhunters.com/`), so canonical links, the sitemap and share links always name the official domain.
+3. The official site is **`mlkleadhunters.com`**, entered in Settings → Pages → **Custom domain** (with GitHub Actions, GitHub ignores the `static/CNAME` file, which is kept only as a reminder). At your registrar, redirect `mlkleadhunters.co.uk` → `https://mlkleadhunters.com/` (301, keeping the path, so old links such as `/how-we-work.html` still reach their redirect) and `mlkleadhunters.fr` → `https://mlkleadhunters.com/fr/` (301). GitHub Pages serves one domain per repository, so the regional domains redirect to it; the English pages speak to the UK, the French pages to France.
 
 ## Emails
 
@@ -24,7 +24,7 @@ Set in `hugo.toml`: English pages show `hello@mlkleadhunters.co.uk`, French page
 
 ## Behaviours (assets/js/main.js)
 
-- **Preloader**: MLK → target, mail, handshake → the slash turns → Leadhunters, 2 s, once per browser session, skipped for reduced motion.
+- **Preloader**: MLK → target, mail, handshake → the slash turns → Leadhunters, about 3 s (the full mark holds for about a second), once per browser session, skipped for reduced motion.
 - **Sticky glass header**: dark glass over the hero, light glass over the body; the switch happens on scroll.
 - **Bottom dock (phones)**: Contact + Book a call slide up once the hero (or the page head) has scrolled away; hidden on the contact page.
 - **Counters**: any element with `data-count` counts up when it enters the view.
@@ -37,6 +37,19 @@ Set in `hugo.toml`: English pages show `hello@mlkleadhunters.co.uk`, French page
 - **Contact / Write to us** links go to the top of the contact page.
 - **Project cards** open the project page on its review: `#review`, `#avis` (`anchor_review`). The full review is the second section of each project page.
 - **Old addresses** from the previous site: `/how-we-work.html` → the How it works section of the home page (`/#how`; its old `#targeting`, `#copywriting`, `#deliverability` and `#reporting` sections go to the matching service), see `static/how-we-work.html`; `/mentions-legales.html` → `/legal/` (alias in `content/en/legal.md`); the old home anchors `/#contact` → the booking form, `/#pricing` → `#offers`, `/#work` → `#projects` (script at the end of `layouts/index.html`).
+
+## Metadata (search engines and link previews)
+
+Built in `layouts/partials/head.html`, in English and French:
+
+- `<title>`: `seo_title` from the front matter + " — MLK Leadhunters" (the home page's `seo_title` is the full title). Without `seo_title`, the page title is used.
+- Meta description: `description` from the front matter (every page has one), else `summary`, else the `lead`.
+- Canonical URL, `hreflang` links between the English and French versions (+ `x-default` → English), robots (`noindex` on the thank-you pages, which are also left out of the sitemap).
+- Open Graph and Twitter cards for link previews, with a 1200×630 image cropped from the page's photo (`image:` in the front matter, else the hero photo); `article:` dates and tags on blog posts.
+- Structured data (schema.org JSON-LD): Organization, WebSite, WebPage, breadcrumbs, BlogPosting on articles, Service on service pages, Article on projects.
+- Favicons (`static/favicon.ico`, `favicon.svg`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png`) and `site.webmanifest`; `robots.txt` points to the sitemap.
+
+After launch, add the site to Google Search Console and Bing Webmaster Tools and submit `https://mlkleadhunters.com/sitemap.xml`.
 
 ## Structure
 

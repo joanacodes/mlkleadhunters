@@ -1,5 +1,7 @@
 ---
 title: "Ciblage et listes"
+seo_title: "Ciblage et listes de prospects B2B vérifiées"
+description: "Une liste de prospects B2B vérifiée, construite pour une offre à la fois : un segment que vous validez par écrit et chaque adresse contrôlée avant envoi."
 icon: "target"
 heading: "Ciblage et <span class='hl'>listes</span>"
 weight: 1

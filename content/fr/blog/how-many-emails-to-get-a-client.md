@@ -1,5 +1,6 @@
 ---
 title: "Combien de cold emails faut-il pour signer un client ?"
+seo_title: "Combien d’emails pour signer un client ?"
 date: 2026-09-13
 description: "Des chiffres réalistes pour une liste B2B précise : taux de réponse, réponses positives, rendez-vous et affaires, et les leviers qui font bouger chacun."
 tags: ["chiffres"]

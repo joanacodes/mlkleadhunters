@@ -1,5 +1,7 @@
 ---
 title: "À propos"
+seo_title: "À propos de notre équipe de cold email B2B"
+description: "L’équipe de MLK Leadhunters, activité cold email de MLK Web Studio : un seul responsable par campagne, en français ou en anglais, en France et au Royaume-Uni."
 icon: "user"
 kicker: "Le studio derrière les emails"
 heading: "À propos de <span class='hl'>MLK Leadhunters</span>"

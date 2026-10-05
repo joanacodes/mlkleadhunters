@@ -1,5 +1,7 @@
 ---
 title: "MLK Leadhunters"
+seo_title: "MLK Leadhunters — Done-for-you B2B cold email agency"
+description: "We build the sending infrastructure, write the emails by hand, run the campaigns and forward positive replies. Most clients get their first within three weeks."
 hero: true
 hero_label: "B2B cold email, done for you"
 hero_title: "Qualified meetings, <span class='hl'>without chasing anyone.</span>"

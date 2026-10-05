@@ -1,5 +1,7 @@
 ---
 title: "Offers"
+seo_title: "Three B2B cold email offers, quoted per scope"
+description: "Set Up for the infrastructure, Set Up + Outreach for the whole chain, or LeadHunting for verified lists. No long contract, quoted after a 15-minute call."
 layout: offers
 icon: "layers"
 kicker: "Three offers"
@@ -50,7 +52,7 @@ offers:
 ---
 ## How a scope is decided
 
-In the first call we look at three things: the offer you want to promote, the size of the market you can reach, and what your team can handle once replies start coming in. From that we propose one of the two offers, a volume, and a start date. You receive the proposal in writing within forty-eight hours.
+In the first call we look at three things: the offer you want to promote, the size of the market you can reach, and what your team can handle once replies start coming in. From that we propose one of the three offers, a volume, and a start date. You receive the proposal in writing within forty-eight hours.
 
 ## What is never included
 
