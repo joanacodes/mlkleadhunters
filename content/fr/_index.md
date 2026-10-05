@@ -1,5 +1,7 @@
 ---
 title: "MLK Leadhunters"
+seo_title: "MLK Leadhunters — Agence de cold email B2B clé en main"
+description: "Infrastructure d’envoi, emails écrits à la main, campagnes pilotées : vous ne recevez que les réponses positives, souvent dès les trois premières semaines."
 hero: true
 hero_label: "Cold email B2B, clé en main"
 hero_title: "Des rendez-vous qualifiés, <span class='hl'>sans démarcher personne.</span>"

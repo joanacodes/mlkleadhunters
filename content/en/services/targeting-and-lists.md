@@ -1,5 +1,7 @@
 ---
 title: "Targeting and lists"
+seo_title: "B2B prospect lists and targeting"
+description: "A verified B2B prospect list built for one offer at a time: a segment you approve in writing, every address checked, nobody contacted twice by mistake."
 icon: "target"
 heading: "Targeting and <span class='hl'>lists</span>"
 weight: 1

@@ -1,5 +1,7 @@
 ---
 title: "Formules"
+seo_title: "Formules de prospection B2B par cold email"
+description: "Set Up pour l’infrastructure, Set Up + Pilotage pour toute la chaîne ou LeadHunting pour les listes. Pas de contrat long, devis après un appel de 15 minutes."
 layout: offers
 icon: "layers"
 kicker: "Trois formules"
@@ -50,7 +52,7 @@ offers:
 ---
 ## Comment un périmètre est décidé
 
-Au premier appel, nous regardons trois choses : l’offre que vous voulez promouvoir, la taille du marché que vous pouvez atteindre, et ce que votre équipe peut absorber quand les réponses arrivent. Nous proposons ensuite l’une des deux formules, un volume et une date de départ. Vous recevez la proposition par écrit sous quarante-huit heures.
+Au premier appel, nous regardons trois choses : l’offre que vous voulez promouvoir, la taille du marché que vous pouvez atteindre, et ce que votre équipe peut absorber quand les réponses arrivent. Nous proposons ensuite l’une des trois formules, un volume et une date de départ. Vous recevez la proposition par écrit sous quarante-huit heures.
 
 ## Ce qui n’est jamais inclus
 

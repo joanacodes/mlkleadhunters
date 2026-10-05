@@ -1,5 +1,7 @@
 ---
 title: "Réponses et reporting"
+seo_title: "Réponses des prospects et reporting mensuel"
+description: "Chaque réponse lue et triée le jour même, les positives transmises avec le fil complet, un rapport d’une page par mois. C’est vous qui répondez, avec vos mots."
 icon: "inbox"
 heading: "Réponses et <span class='hl'>reporting</span>"
 weight: 4

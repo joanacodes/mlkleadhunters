@@ -1,5 +1,7 @@
 ---
 title: "Pilotech"
+seo_title: "Pilotech : cold email B2B en climatisation"
+description: "Climatisation invisible à Paris : comment des emails signés par le fondateur ont amené restaurateurs et commerçants à appeler Pilotech, sans commerciaux."
 weight: 1
 client: "Pilotech"
 sector: "Climatisation et ventilation, Paris"

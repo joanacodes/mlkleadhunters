@@ -1,5 +1,7 @@
 ---
 title: "Eden Corporate Mobility"
+seo_title: "Eden Corporate Mobility : cold email aux RH"
+description: "Comment le cold email a mené Eden Corporate Mobility jusqu’aux RH et aux office managers qui réservent le logement des salariés en mission, pas aux voyageurs."
 weight: 2
 client: "Eden Corporate Mobility"
 sector: "Logement d’entreprise et relocation"

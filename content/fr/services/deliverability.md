@@ -1,5 +1,7 @@
 ---
 title: "Délivrabilité et infrastructure"
+seo_title: "Délivrabilité et infrastructure de cold email"
+description: "Domaines dédiés, boîtes chauffées, SPF, DKIM et DMARC testés : vos emails arrivent en boîte de réception et votre domaine principal n’est jamais exposé."
 icon: "server"
 heading: "<span class='hl'>Délivrabilité</span> et infrastructure"
 weight: 2

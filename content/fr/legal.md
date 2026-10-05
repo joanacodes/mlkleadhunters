@@ -1,5 +1,7 @@
 ---
 title: "Mentions légales"
+seo_title: "Mentions légales et données personnelles"
+description: "Mentions légales de mlkleadhunters.com : éditeur MLK Web Studio, hébergement GitHub Pages, usage des données du formulaire et absence de cookie d’audience."
 kicker: "Légal"
 ---
 **Éditeur :** MLK Web Studio — [dénomination, forme juridique, numéro d’immatriculation et adresse à compléter].

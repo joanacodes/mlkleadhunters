@@ -1,8 +1,8 @@
 ---
 robots: "noindex, follow"
-sitemap:
-  disable: true
 title: "Merci"
+seo_title: "Merci, message bien reçu"
+description: "Votre message nous est bien parvenu. Réponse sous 48 heures pour planifier votre appel de 15 minutes ; d’ici là, le blog répond aux questions sur le cold email."
 kicker: "Message reçu"
 icon: "mail"
 heading: "Merci, <span class='hl'>c’est parti.</span>"

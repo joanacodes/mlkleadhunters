@@ -1,5 +1,7 @@
 ---
 title: "Contact"
+seo_title: "Request a free cold email discovery call"
+description: "Tell us about your company and the clients you want to win. We reply within 48 hours to plan a free 15-minute call, with no commitment and no newsletter."
 layout: contact
 icon: "phone"
 kicker: "Discovery call"

@@ -1,5 +1,7 @@
 ---
 title: "Rédaction"
+seo_title: "Rédaction de cold emails B2B sur mesure"
+description: "Trois emails courts en texte brut, écrits à la main dans votre ton, avec deux versions du premier testées en parallèle. Rien ne part sans votre accord."
 icon: "pen"
 heading: "<span class='hl'>Rédaction</span>"
 weight: 3

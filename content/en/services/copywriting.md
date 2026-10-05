@@ -1,5 +1,7 @@
 ---
 title: "Copywriting"
+seo_title: "Cold email copywriting for B2B"
+description: "Three short plain-text emails, written by hand in your tone, with two versions of the first one tested. You approve every word before anything is sent."
 icon: "pen"
 heading: "<span class='hl'>Copywriting</span>"
 weight: 3
