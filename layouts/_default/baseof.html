@@ -2,7 +2,7 @@
 <html lang="{{ .Site.Language.Lang }}" class="no-js">
 <head>
 {{ partial "head.html" . }}
-<script>(function(){try{if(sessionStorage.getItem('mlk-preloaded')||window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('no-preload');}}catch(e){}})();</script>
+<script>(function(){var d=document.documentElement,s=null;try{s=sessionStorage.getItem('mlk-preloaded');}catch(e){}d.classList.add(s||(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)?'no-preload':'pl-playing');})();</script>
 </head>
 <body class="{{ if .IsHome }}is-home{{ end }}{{ if .Params.hero }} has-hero{{ end }}{{ if eq .Section "projects" }}{{ if .IsPage }} has-hero{{ end }}{{ end }}">
 {{ partial "preloader.html" . }}

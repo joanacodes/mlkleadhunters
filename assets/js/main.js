@@ -16,21 +16,50 @@
   }
 
   function init() {
-    // Preloader: once per session, about 3.5 s. Driven by its own CSS animation (which can start late on a slow
-    // first paint), so it is never cut short; the timer is only a safety net.
+    // Preloader: once per session, about 3 s. Its timeline is CSS (so a slow first paint never cuts it short). When its
+    // "pl-land" animation starts, the logo slides and scales onto the header logo while the glass clears, then the
+    // real header logo takes over. If this script runs late, it catches up from wherever the CSS timeline is.
     var pre = document.getElementById('preloader');
-    // true once the fade-out (pl-out) has started, even if this script runs late
-    var preFading = function () {
-      try { var a = pre.getAnimations().filter(function (x) { return x.animationName === 'pl-out'; })[0]; if (a) { return a.effect.getComputedTiming().progress !== null; } } catch (e) {}
-      var cs = getComputedStyle(pre); return parseFloat(cs.opacity) < 1 || cs.visibility === 'hidden';
+    var root = document.documentElement;
+    var preStarted = function (el, name) {
+      try { var a = el.getAnimations().filter(function (x) { return x.animationName === name; })[0]; if (a) { return a.effect.getComputedTiming().progress !== null; } } catch (e) {}
+      return false;
     };
     if (pre) {
-      if (session.get('mlk-preloaded') || reduce) { pre.classList.add('is-done'); }
+      if (session.get('mlk-preloaded') || reduce) { pre.classList.add('is-done'); root.classList.remove('pl-playing'); }
       else {
         session.set('mlk-preloaded', '1');
-        var preDone = function () { pre.classList.add('is-done'); };
-        pre.addEventListener('animationend', function (e) { if (e.animationName === 'pl-out') { preDone(); } });
-        if (preFading() && getComputedStyle(pre).visibility === 'hidden') { preDone(); } // script ran after the fade ended
+        var mark = pre.querySelector('.preloader__mark');
+        var preOver = false, landing = false;
+        var preDone = function () { if (preOver) { return; } preOver = true; pre.classList.add('is-done'); root.classList.remove('pl-playing'); };
+        var land = function () {
+          if (landing || preOver) { return; }
+          landing = true;
+          pre.classList.add('is-landing');
+          var logo = document.querySelector('#header .wordmark');
+          var a = mark && mark.getBoundingClientRect(), b = logo && logo.getBoundingClientRect();
+          if (a && b && a.width && b.width) {
+            var s = b.width / a.width;
+            var dx = (b.left + b.width / 2) - (a.left + a.width / 2), dy = (b.top + b.height / 2) - (a.top + a.height / 2);
+            mark.style.color = getComputedStyle(logo).color;
+            mark.style.transform = 'translate(' + dx + 'px, ' + dy + 'px) scale(' + s + ')';
+          }
+          // hand over to the header logo when the slide ends (timer as a safety net)
+          mark.addEventListener('transitionend', function (e) { if (e.target === mark && e.propertyName === 'transform') { preDone(); } });
+          setTimeout(preDone, 1000);
+          // a resize or rotation mid-slide would leave the target stale: finish at once
+          var w0 = window.innerWidth, h0 = window.innerHeight;
+          var onViewport = function () { if (Math.abs(window.innerWidth - w0) > 1 || Math.abs(window.innerHeight - h0) > 80) { preDone(); } };
+          window.addEventListener('resize', onViewport);
+          window.addEventListener('orientationchange', preDone);
+        };
+        pre.addEventListener('animationstart', function (e) { if (e.target === pre && e.animationName === 'pl-land') { land(); } });
+        pre.addEventListener('animationend', function (e) { if (e.target === pre && e.animationName === 'pl-hide') { preDone(); } });
+        if (preStarted(pre, 'pl-land')) {
+          // late script: slide if the logo is still on screen, otherwise let the no-JS fade finish
+          if (mark && !preStarted(mark, 'pl-mark-out')) { land(); }
+          else if (preStarted(pre, 'pl-hide')) { preDone(); }
+        }
         setTimeout(preDone, 6000);
       }
     }
@@ -48,9 +77,9 @@
       var ready = function () { glass.classList.add('is-ready'); };
       if (reduce) { ready(); }
       else if (pre && !pre.classList.contains('is-done')) {
-        // enter as the preloader starts to fade (at once if it already has)
-        if (preFading()) { ready(); }
-        else { pre.addEventListener('animationstart', function (e) { if (e.animationName === 'pl-out') { ready(); } }); setTimeout(ready, 6000); }
+        // enter as the logo starts sliding to the header (at once if it already has)
+        if (pre.classList.contains('is-landing') || preStarted(pre, 'pl-land')) { ready(); }
+        else { pre.addEventListener('animationstart', function (e) { if (e.target === pre && e.animationName === 'pl-land') { ready(); } }); setTimeout(ready, 6000); }
       }
       else { setTimeout(ready, 80); }
     }

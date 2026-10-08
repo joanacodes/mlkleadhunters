@@ -438,20 +438,32 @@ a.card:hover .icon { border-color: var(--accent); }
 .page.is-entering { opacity: 0; transform: translateY(8px); transition: none; }
 .no-js .page, .no-js .page.is-entering { opacity: 1; transform: none; }
 
-/* ---------- Preloader: 1.3 s, once per session ---------- */
-.preloader { position: fixed; inset: 0; z-index: 60; display: flex; align-items: center; justify-content: center; background: var(--graphite); color: var(--ice); animation: pl-out .25s var(--ease) 3.25s forwards; }
-.preloader__mark { display: inline-flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 600; letter-spacing: .24em; text-transform: uppercase; }
-.preloader__icons { position: relative; width: 40px; height: 40px; animation: pl-collapse .35s var(--ease) 1.7s forwards; }
-.preloader__icons .icon { position: absolute; inset: 0; color: var(--orange); border-color: rgba(239,87,29,.5); opacity: 0; transform: scale(.9); animation: pl-icon .55s var(--ease) forwards; }
+/* ---------- Preloader: about 3 s, once per session ---------- */
+/* Preloader, about 3 s, once per session. MLK and LEADHUNTERS from the start, the icons play between them; then the "/"
+   takes their place (the mark is the header logo at 15/13 scale) and the background turns to glass; at "pl-land" the
+   logo slides to the header logo's place (main.js) while the glass clears. Without JS the logo just fades out. */
+.preloader { position: fixed; inset: 0; z-index: 60; display: flex; align-items: center; justify-content: center; color: var(--ice); animation: pl-land 1ms linear 2.25s forwards, pl-hide 1ms linear 2.9s forwards; }
+.preloader__bg { --pl-a: .5; position: absolute; inset: 0; background-color: rgba(13,16,23,1); -webkit-backdrop-filter: blur(22px) saturate(1.3); backdrop-filter: blur(22px) saturate(1.3); animation: pl-glass .6s var(--ease) 1.4s forwards, pl-clear .7s cubic-bezier(.65, 0, .35, 1) 2.25s forwards; }
+body:not(.has-hero) .preloader__bg { --pl-a: .66; }
+.preloader__mark { position: relative; display: inline-flex; align-items: center; gap: .6154em; font-size: 15px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; transform-origin: 50% 50%; transition: transform .7s cubic-bezier(.65, 0, .35, 1); animation: pl-mark-out .3s var(--ease) 2.45s forwards; }
+.preloader__icons { position: relative; display: flex; align-items: center; justify-content: center; min-width: 40px; height: 40px; animation: pl-collapse .35s var(--ease) 1.4s forwards; }
+.preloader__icons .icon { position: absolute; inset: 0; color: var(--orange); border-color: rgba(239,87,29,.5); opacity: 0; transform: scale(.9); animation: pl-icon .45s var(--ease) forwards; }
 .preloader__icons .icon:nth-child(1) { animation-delay: .05s; }
-.preloader__icons .icon:nth-child(2) { animation-delay: .6s; }
-.preloader__icons .icon:nth-child(3) { animation-delay: 1.15s; }
-/* once the last icon has played, the "/" takes its place and the slot narrows to it: MLK / LEADHUNTERS */
-.preloader__slash { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding-bottom: 2px; color: var(--orange); font-weight: 500; letter-spacing: 0; font-size: 18px; opacity: 0; animation: pl-slash-in .25s var(--ease) 1.66s forwards; }
+.preloader__icons .icon:nth-child(2) { animation-delay: .5s; }
+.preloader__icons .icon:nth-child(3) { animation-delay: .95s; }
+.preloader__slash { color: var(--orange); font-weight: 500; letter-spacing: 0; transform: translateY(-.077em); opacity: 0; animation: pl-slash-in .25s var(--ease) 1.38s forwards; }
+.preloader.is-landing { animation: none; pointer-events: none; }
+.preloader.is-landing .preloader__mark { animation: none; }
+.pl-playing #header .wordmark { opacity: 0; animation: pl-wm-show 1ms linear 3.2s forwards; }
 @keyframes pl-icon { 0% { opacity: 0; transform: scale(.9); } 25% { opacity: 1; transform: none; } 75% { opacity: 1; transform: none; } 100% { opacity: 0; transform: scale(1.04); } }
-@keyframes pl-collapse { to { width: 10px; } }
+@keyframes pl-collapse { to { min-width: 0; } }
 @keyframes pl-slash-in { to { opacity: 1; } }
-@keyframes pl-out { to { opacity: 0; visibility: hidden; } }
+@keyframes pl-glass { from { background-color: rgba(13,16,23,1); } to { background-color: rgba(13,16,23,var(--pl-a)); } }
+@keyframes pl-clear { from { background-color: rgba(13,16,23,var(--pl-a)); -webkit-backdrop-filter: blur(22px) saturate(1.3); backdrop-filter: blur(22px) saturate(1.3); } to { background-color: rgba(13,16,23,0); -webkit-backdrop-filter: blur(0px) saturate(1); backdrop-filter: blur(0px) saturate(1); } }
+@keyframes pl-land { to { --pl-land: 1; } }
+@keyframes pl-mark-out { to { opacity: 0; } }
+@keyframes pl-hide { from, to { visibility: hidden; pointer-events: none; } }
+@keyframes pl-wm-show { from, to { opacity: 1; } }
 .no-preload .preloader, .preloader.is-done { display: none; }
 @media (prefers-reduced-motion: reduce) { .preloader { display: none; } .dock, .langprompt, .page, .header { transition: none !important; } }
 
