@@ -445,9 +445,11 @@ a.card:hover .icon { border-color: var(--accent); }
 .preloader__icons .icon:nth-child(1) { animation-delay: .05s; }
 .preloader__icons .icon:nth-child(2) { animation-delay: .5s; }
 .preloader__icons .icon:nth-child(3) { animation-delay: .95s; }
-.preloader__slash { color: var(--orange); font-weight: 500; letter-spacing: 0; font-size: 18px; transform: translateY(-1px); }
+/* once the last icon has played, the "/" takes its place and the slot narrows to it: MLK / LEADHUNTERS */
+.preloader__slash { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding-bottom: 2px; color: var(--orange); font-weight: 500; letter-spacing: 0; font-size: 18px; opacity: 0; animation: pl-slash-in .25s var(--ease) 1.38s forwards; }
 @keyframes pl-icon { 0% { opacity: 0; transform: scale(.9); } 25% { opacity: 1; transform: none; } 75% { opacity: 1; transform: none; } 100% { opacity: 0; transform: scale(1.04); } }
-@keyframes pl-collapse { to { width: 0; margin-right: -12px; } }
+@keyframes pl-collapse { to { width: 10px; } }
+@keyframes pl-slash-in { to { opacity: 1; } }
 @keyframes pl-out { to { opacity: 0; visibility: hidden; } }
 .no-preload .preloader, .preloader.is-done { display: none; }
 @media (prefers-reduced-motion: reduce) { .preloader { display: none; } .dock, .langprompt, .page, .header { transition: none !important; } }
