@@ -14,7 +14,7 @@ The main Lead Hunters site, in the Lumière direction: graphite and ice, one blu
 
 ## Emails
 
-Set in `hugo.toml`: English pages show `hello@mlkleadhunters.co.uk`, French pages `hello@mlkleadhunters.fr`, and the legal notice lists `hello@mlkleadhunters.com` as the main address. The contact form posts to the address of the page's language, except in French, where it goes to `contact@mlkleadhunters.fr` (`formEmail` in `hugo.toml`; a language without `formEmail` uses its `email`). Create the three mailboxes (or aliases to one inbox) before launch.
+English pages use `hello@mlkleadhunters.co.uk` (the English legal notice also lists `hello@mlkleadhunters.com` as the main address); French pages use only `contact@mlkleadhunters.fr`. `email` per language in `hugo.toml` drives the footer, the contact form (it posts to the address of the page's language) and the structured data; the legal notices (`content/*/legal.md`) and the contact pages' text (`content/*/contact.md`) spell the addresses out and are edited by hand. Create the three mailboxes (or aliases to one inbox) before launch.
 
 ## Colour in the text
 
@@ -24,7 +24,8 @@ Set in `hugo.toml`: English pages show `hello@mlkleadhunters.co.uk`, French page
 
 ## Behaviours (assets/js/main.js)
 
-- **Preloader**: MLK → target, mail, handshake → the slash turns → Leadhunters, about 3 s (the full mark holds for about a second), once per browser session, skipped for reduced motion.
+- **Preloader**: "MLK" and "Leadhunters" from the start, with the target, mail and handshake icons playing between them; once the last icon has played, the "/" takes their place and the logo "MLK / Leadhunters" holds for about a second. About 3 s, once per browser session, skipped for reduced motion.
+- **Hero highlight**: the highlighted words of the home headline (`<span class='hl'>` in `hero_title`) stay white on a blue highlight that slides in from left to right once the hero appears.
 - **Sticky glass header**: dark glass over the hero, light glass over the body; the switch happens on scroll.
 - **Bottom dock (phones)**: Contact + Book a call slide up once the hero (or the page head) has scrolled away; hidden on the contact page.
 - **Counters**: any element with `data-count` counts up when it enters the view.

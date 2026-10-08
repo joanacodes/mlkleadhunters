@@ -7,7 +7,7 @@ aliases: ["/mentions-legales.html"]
 ---
 **Publisher:** MLK Web Studio — [company name, legal form, registration number and address to complete].
 
-**Contact:** [hello@mlkleadhunters.com](mailto:hello@mlkleadhunters.com) (UK: [hello@mlkleadhunters.co.uk](mailto:hello@mlkleadhunters.co.uk), France: [hello@mlkleadhunters.fr](mailto:hello@mlkleadhunters.fr))
+**Contact:** [hello@mlkleadhunters.com](mailto:hello@mlkleadhunters.com) (UK: [hello@mlkleadhunters.co.uk](mailto:hello@mlkleadhunters.co.uk), France: [contact@mlkleadhunters.fr](mailto:contact@mlkleadhunters.fr))
 
 **Hosting:** GitHub Pages, GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, United States.
 

@@ -31,4 +31,4 @@ note: "Arrive directement sur <a href='mailto:contact@mlkleadhunters.fr'>contact
 
 Un appel de quinze minutes, sans engagement. Vous repartez avec un avis honnête sur le potentiel de votre marché, un plan clair, et une proposition écrite sous quarante-huit heures, que nous travaillions ensemble ou non.
 
-Vous préférez l’email ? Écrivez à [hello@mlkleadhunters.fr](mailto:hello@mlkleadhunters.fr).
+Vous préférez l’email ? Écrivez à [contact@mlkleadhunters.fr](mailto:contact@mlkleadhunters.fr).
