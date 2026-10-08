@@ -16,7 +16,7 @@
   }
 
   function init() {
-    // Preloader: once per session, about 3 s. Driven by its own CSS animation (which can start late on a slow
+    // Preloader: once per session, about 3.5 s. Driven by its own CSS animation (which can start late on a slow
     // first paint), so it is never cut short; the timer is only a safety net.
     var pre = document.getElementById('preloader');
     // true once the fade-out (pl-out) has started, even if this script runs late

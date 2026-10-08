@@ -24,7 +24,7 @@ English pages use `hello@mlkleadhunters.co.uk` (the English legal notice also li
 
 ## Behaviours (assets/js/main.js)
 
-- **Preloader**: "MLK" and "Leadhunters" from the start, with the target, mail and handshake icons playing between them; once the last icon has played, the "/" takes their place and the logo "MLK / Leadhunters" holds for about a second. About 3 s, once per browser session, skipped for reduced motion.
+- **Preloader**: "MLK" and "Leadhunters" from the start, with the target, mail and handshake icons playing between them; once the last icon has played, the "/" takes their place and the logo "MLK / Leadhunters" holds for about a second. About 3.5 s, once per browser session, skipped for reduced motion.
 - **Hero highlight**: the highlighted words of the home headline (`<span class='hl'>` in `hero_title`) stay white on a blue highlight that slides in from left to right once the hero appears.
 - **Sticky glass header**: dark glass over the hero, light glass over the body; the switch happens on scroll.
 - **Bottom dock (phones)**: Contact + Book a call slide up once the hero (or the page head) has scrolled away; hidden on the contact page.
