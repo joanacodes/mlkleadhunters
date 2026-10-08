@@ -352,9 +352,10 @@ a.card:hover .icon { border-color: var(--accent); }
 .on-dark .hl, .glass .hl, .offer--dark .hl { color: var(--accent); }
 /* Home hero: the highlighted words stay white, on a blue highlight that slides in from left to right
    (across line breaks, in reading order) once the hero has appeared */
-.glass--hero .hl { color: inherit; padding: 0 .06em; background: linear-gradient(var(--accent), var(--accent)) 0 64% / 0% 72% no-repeat; transition: background-size 1.1s cubic-bezier(.65, 0, .35, 1) .95s; }
-.glass--hero.is-ready .hl, .no-js .glass--hero .hl { background-size: 100% 72%; }
-@media (prefers-reduced-motion: reduce) { .glass--hero .hl { background-size: 100% 72%; transition: none; } }
+.glass--hero .hl { color: inherit; padding: 0 .06em; margin-left: -.06em; background: linear-gradient(var(--accent), var(--accent)) 0 58% / 0% 66% no-repeat; }
+.glass--hero.is-ready .hl { background-size: 100% 66%; transition: background-size 1.1s cubic-bezier(.65, 0, .35, 1) .95s; }
+.no-js .glass--hero .hl { background-size: 100% 66%; }
+@media (prefers-reduced-motion: reduce) { .glass--hero .hl, .glass--hero.is-ready .hl { background-size: 100% 66%; transition: none; } }
 .prose strong { color: var(--accent); font-weight: 600; }
 .prose mark { background: none; color: var(--orange); font-weight: 500; }
 .prose h2 mark, .prose h3 mark { font-weight: inherit; }

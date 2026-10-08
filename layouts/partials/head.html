@@ -62,18 +62,17 @@
 {{- $siteID := printf "%s#website" $home.Permalink -}}
 {{- $pageID := printf "%s#webpage" .Permalink -}}
 {{- $image := dict "@type" "ImageObject" "url" $og.Permalink "width" $og.Width "height" $og.Height -}}
-{{- /* The same Organization node on every page, in both languages: one contact point per language */ -}}
-{{- $contacts := slice -}}
-{{- range site.Sites -}}
-  {{- $contacts = $contacts | append (dict "@type" "ContactPoint" "contactType" "sales" "email" .Params.email "availableLanguage" (.Language.LanguageCode | default .Language.Lang)) -}}
-{{- end -}}
+{{- /* Organization: the contact address of the page's language (French pages only ever show contact@mlkleadhunters.fr);
+     English pages also give the main address */ -}}
+{{- $contacts := slice (dict "@type" "ContactPoint" "contactType" "sales" "email" site.Params.email "availableLanguage" $lang) -}}
+{{- $orgEmail := cond (eq site.Language.Lang site.Sites.Default.Language.Lang) site.Params.emailMain site.Params.email -}}
 {{- $org := dict
   "@type" "Organization"
   "@id" $orgID
   "name" site.Title
   "url" ("/" | absURL)
   "logo" (dict "@type" "ImageObject" "url" ("icon-512.png" | absURL) "width" 512 "height" 512)
-  "email" site.Params.emailMain
+  "email" $orgEmail
   "description" site.Sites.Default.Params.description
   "areaServed" (slice "United Kingdom" "France")
   "parentOrganization" (dict "@type" "Organization" "name" "MLK Web Studio")

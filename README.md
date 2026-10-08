@@ -14,7 +14,7 @@ The main Lead Hunters site, in the Lumière direction: graphite and ice, one blu
 
 ## Emails
 
-Set in `hugo.toml` (`email` per language): English pages show `hello@mlkleadhunters.co.uk`, French pages `contact@mlkleadhunters.fr`, and the legal notice lists `hello@mlkleadhunters.com` as the main address. The contact form posts to the address of the page's language. Create the three mailboxes (or aliases to one inbox) before launch.
+English pages use `hello@mlkleadhunters.co.uk` (the English legal notice also lists `hello@mlkleadhunters.com` as the main address); French pages use only `contact@mlkleadhunters.fr`. `email` per language in `hugo.toml` drives the footer, the contact form (it posts to the address of the page's language) and the structured data; the legal notices (`content/*/legal.md`) and the contact pages' text (`content/*/contact.md`) spell the addresses out and are edited by hand. Create the three mailboxes (or aliases to one inbox) before launch.
 
 ## Colour in the text
 
