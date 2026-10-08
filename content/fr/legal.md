@@ -6,7 +6,7 @@ kicker: "Légal"
 ---
 **Éditeur :** MLK Web Studio — [dénomination, forme juridique, numéro d’immatriculation et adresse à compléter].
 
-**Contact :** [hello@mlkleadhunters.com](mailto:hello@mlkleadhunters.com) (France : [hello@mlkleadhunters.fr](mailto:hello@mlkleadhunters.fr), Royaume-Uni : [hello@mlkleadhunters.co.uk](mailto:hello@mlkleadhunters.co.uk))
+**Contact :** [hello@mlkleadhunters.com](mailto:hello@mlkleadhunters.com) (France : [contact@mlkleadhunters.fr](mailto:contact@mlkleadhunters.fr), Royaume-Uni : [hello@mlkleadhunters.co.uk](mailto:hello@mlkleadhunters.co.uk))
 
 **Hébergement :** GitHub Pages, GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.
 

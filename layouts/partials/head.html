@@ -65,7 +65,7 @@
 {{- /* The same Organization node on every page, in both languages: one contact point per language */ -}}
 {{- $contacts := slice -}}
 {{- range site.Sites -}}
-  {{- $contacts = $contacts | append (dict "@type" "ContactPoint" "contactType" "sales" "email" (.Params.formEmail | default .Params.email) "availableLanguage" (.Language.LanguageCode | default .Language.Lang)) -}}
+  {{- $contacts = $contacts | append (dict "@type" "ContactPoint" "contactType" "sales" "email" .Params.email "availableLanguage" (.Language.LanguageCode | default .Language.Lang)) -}}
 {{- end -}}
 {{- $org := dict
   "@type" "Organization"
