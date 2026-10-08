@@ -44,14 +44,21 @@
             mark.style.color = getComputedStyle(logo).color;
             mark.style.transform = 'translate(' + dx + 'px, ' + dy + 'px) scale(' + s + ')';
           }
-          setTimeout(preDone, 720);
+          // hand over to the header logo when the slide ends (timer as a safety net)
+          mark.addEventListener('transitionend', function (e) { if (e.target === mark && e.propertyName === 'transform') { preDone(); } });
+          setTimeout(preDone, 1000);
+          // a resize or rotation mid-slide would leave the target stale: finish at once
+          var w0 = window.innerWidth, h0 = window.innerHeight;
+          var onViewport = function () { if (Math.abs(window.innerWidth - w0) > 1 || Math.abs(window.innerHeight - h0) > 80) { preDone(); } };
+          window.addEventListener('resize', onViewport);
+          window.addEventListener('orientationchange', preDone);
         };
         pre.addEventListener('animationstart', function (e) { if (e.target === pre && e.animationName === 'pl-land') { land(); } });
         pre.addEventListener('animationend', function (e) { if (e.target === pre && e.animationName === 'pl-hide') { preDone(); } });
         if (preStarted(pre, 'pl-land')) {
           // late script: slide if the logo is still on screen, otherwise let the no-JS fade finish
           if (mark && !preStarted(mark, 'pl-mark-out')) { land(); }
-          else if (getComputedStyle(pre).visibility === 'hidden') { preDone(); }
+          else if (preStarted(pre, 'pl-hide')) { preDone(); }
         }
         setTimeout(preDone, 6000);
       }
@@ -71,7 +78,7 @@
       if (reduce) { ready(); }
       else if (pre && !pre.classList.contains('is-done')) {
         // enter as the logo starts sliding to the header (at once if it already has)
-        if (preStarted(pre, 'pl-land')) { ready(); }
+        if (pre.classList.contains('is-landing') || preStarted(pre, 'pl-land')) { ready(); }
         else { pre.addEventListener('animationstart', function (e) { if (e.target === pre && e.animationName === 'pl-land') { ready(); } }); setTimeout(ready, 6000); }
       }
       else { setTimeout(ready, 80); }
