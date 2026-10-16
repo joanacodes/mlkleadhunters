@@ -5,7 +5,7 @@ description: "Legal notice for mlkleadhunters.com: the publisher MLK Web Studio,
 kicker: "Legal"
 aliases: ["/mentions-legales.html"]
 ---
-**Publisher:** MLK Web Studio — [company name, legal form, registration number and address to complete].
+**Publisher:** MLK Web Studio, 47 rue Vivienne, 75002 Paris, France.
 
 **Contact:** [hello@mlkleadhunters.com](mailto:hello@mlkleadhunters.com) (UK: [hello@mlkleadhunters.co.uk](mailto:hello@mlkleadhunters.co.uk), France: [contact@mlkleadhunters.fr](mailto:contact@mlkleadhunters.fr))
 
