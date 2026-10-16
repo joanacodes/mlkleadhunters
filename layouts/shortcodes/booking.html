@@ -1,9 +1,9 @@
 {{- /* YouCanBook.me booking calendar, from the embed code in YouCanBook.me (Share → Embed).
-  In a page: {{< booking domain="mlkleadhunters" displaymode="auto" >}}
-  domain = the booking page's subdomain (domain.youcanbook.me); displaymode as in the embed code.
+  In a page: {{< booking domain="mlkleadhunters" displaymode="light" >}}
+  domain = the booking page's subdomain (domain.youcanbook.me); displaymode = light (the site is always light), dark, or auto (follows the visitor's device).
   The script replaces itself with the calendar; the link below shows only if the calendar does not load. */ -}}
 {{- $domain := .Get "domain" -}}
-{{- $mode := .Get "displaymode" | default "auto" -}}
+{{- $mode := .Get "displaymode" | default "light" -}}
 <div class="booking">
   <span class="booking__label">{{ i18n "book_short" }}</span>
   <div class="booking__frame"><script src="https://embed.ycb.me" async="true" data-domain="{{ $domain }}" data-displaymode="{{ $mode }}"></script></div>

@@ -31,6 +31,6 @@ note: "Goes straight to <a href='mailto:hello@mlkleadhunters.co.uk'>hello@mlklea
 
 A fifteen-minute call, no commitment. You get an honest view of the potential of your market, a clear plan, and a written proposal within forty-eight hours, whether we end up working together or not.
 
-{{< booking domain="mlkleadhunters" displaymode="auto" >}}
+{{< booking domain="mlkleadhunters" displaymode="light" >}}
 
 Prefer email? Write to [hello@mlkleadhunters.co.uk](mailto:hello@mlkleadhunters.co.uk).
