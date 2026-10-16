@@ -11,6 +11,6 @@ aliases: ["/mentions-legales.html"]
 
 **Hosting:** GitHub Pages, GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, United States.
 
-**Personal data:** the contact form sends your message to our mailbox and nothing else. We keep it for the time needed to answer you. You can ask us to delete it at any time by writing to the address above. This site uses no analytics cookies.
+**Personal data:** the contact form sends your message to our mailbox and nothing else. We keep it for the time needed to answer you. You can ask us to delete it at any time by writing to the address above. The booking calendar on the contact page is provided by YouCanBook.me (youcanbook.me), which receives the details you enter when you book a call. This site uses no analytics cookies.
 
 **Credits:** photographs by the publisher. Typeface: Instrument Sans.
