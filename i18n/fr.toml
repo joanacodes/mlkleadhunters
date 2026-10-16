@@ -86,6 +86,10 @@ other = "Vous répondez. Nous n’écrivons jamais en votre nom."
 [rule_body]
 other = "Nous lisons et trions chaque réponse, et les positives arrivent dans votre boîte le jour même avec le fil et ce que nous savons de l’entreprise. <strong>La conversation avec un prospect vous appartient</strong> : vous répondez depuis votre adresse, vous posez le rendez-vous, vous construisez la relation. Nous faisons en sorte que les bonnes réponses vous parviennent vite et sans bruit."
 
+# Booking calendar (contact page), shown only if the calendar does not load
+[booking_fallback]
+other = "Le calendrier ne s’affiche pas\u00a0? Ouvrez-le dans un nouvel onglet"
+
 # Anchors (the part after # in links)
 [anchor_book]
 other = "reserver-un-appel"
