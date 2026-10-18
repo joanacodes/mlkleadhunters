@@ -21,4 +21,4 @@ From France, for clients in France and the United Kingdom. Campaigns run in Fren
 
 ## The tools we use
 
-Instantly for sending and warm-up, Reoon for verification, Outscraper for sourcing, Spaceship and Namecheap for domains, Calendly for booking. We own nothing in those companies; we use them because they work.
+Instantly for sending and warm-up, Reoon for verification, Outscraper for sourcing, Spaceship and Namecheap for domains, YouCanBook.me for booking. We own nothing in those companies; we use them because they work.
